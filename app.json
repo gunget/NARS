@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "NARS",
+    "slug": "NARS",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "NARS"
+}
