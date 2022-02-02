@@ -1,0 +1,39 @@
+// Navigation
+npm install @react-navigation/native react-native-reanimated react-native-gesture-handler react-native-screens react-native-safe-area-context @react-native-community/masked-view @react-navigation/stack @react-navigation/bottom-tabs
+
+// expo install expo-font
+
+// expo install react-native-svg
+
+// expo install react-native-linear-gradient //그라디언트 버튼
+
+//splash screen 띄우기
+- expo에서는 간단하게 지원됨
+- app.json에서 expo부분 편집. icon, splash, android부분에 아래내용 추가
+{
+  "expo": {
+    ~~~
+    "icon": "./assets/images/icon.png",
+    "splash": {
+      "image": "./assets/images/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "backgroundColor": "#fff"
+      }
+    }
+  },
+  "name": "LCRN11"
+}
+이때 icon 및 adaptiveIcon의 크지는 1024*1024이고
+splash의 사이즈는 1242*2436(폰의 크기에 맞는 사이즈)의 이미지를 넣어주면 된다.
+
+//splash screen을 사용해 초기 fetch하기
+expo install expo-splash-screen
+
+참고용
+// Slide Up Panel
+npm install --save rn-sliding-up-panel
