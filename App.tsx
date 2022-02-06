@@ -16,6 +16,7 @@ import {useFonts} from 'expo-font'
 import {dummyPlaceType} from './constants/dummy'
 
 import {Selections, TelOnAir, MNGRpt, MNGCam} from './screens'
+import Tabs from './navigations/tabs'
 
 export type RootStackParamList = {
   Selections: undefined
@@ -52,9 +53,10 @@ const App: FunctionComponent = () => {
           }}
           initialRouteName={'Selections'}>
           <Stack.Screen name="Selections" component={Selections} />
-          <Stack.Screen name="TelOnAir" component={TelOnAir} />
+          <Stack.Screen name="Selections" component={Tabs} />
+          {/* <Stack.Screen name="TelOnAir" component={TelOnAir} />
           <Stack.Screen name="MNGRpt" component={MNGRpt} />
-          <Stack.Screen name="MNGCam" component={MNGCam} />
+          <Stack.Screen name="MNGCam" component={MNGCam} /> */}
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>
