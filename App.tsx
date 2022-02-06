@@ -20,12 +20,14 @@ import Tabs from './navigations/tabs'
 
 export type RootStackParamList = {
   Selections: undefined
-  TelOnAir: undefined
-  MNGRpt: undefined
-  MNGCam: undefined
+  Tabs: {selection: string} | undefined
+  // TelOnAir: undefined
+  // MNGRpt: undefined
+  // MNGCam: undefined
 }
 
 export type useNavigationProp = StackNavigationProp<RootStackParamList>
+export type TabsRouteProp = RouteProp<RootStackParamList, 'Tabs'>
 
 const Stack = createStackNavigator<RootStackParamList>()
 
@@ -53,7 +55,7 @@ const App: FunctionComponent = () => {
           }}
           initialRouteName={'Selections'}>
           <Stack.Screen name="Selections" component={Selections} />
-          <Stack.Screen name="Selections" component={Tabs} />
+          <Stack.Screen name="Tabs" component={Tabs} />
           {/* <Stack.Screen name="TelOnAir" component={TelOnAir} />
           <Stack.Screen name="MNGRpt" component={MNGRpt} />
           <Stack.Screen name="MNGCam" component={MNGCam} /> */}

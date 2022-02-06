@@ -18,7 +18,8 @@ export type dummyDataType = {
   title: string
   description: string
   img: ImageSourcePropType
-  screen: keyof RootStackParamList
+  screen: string
+  // screen: keyof RootStackParamList
 }
 
 const dummyData: dummyDataType[] = [
@@ -46,6 +47,8 @@ const dummyData: dummyDataType[] = [
 ]
 
 export const Selections: FunctionComponent = () => {
+  // const [tabSelection, setTabSelection] = useState('TelOnAir')
+
   const navigation = useNavigation<useNavigationProp>()
 
   const scrollX = useRef(new Animated.Value(0)).current
@@ -86,7 +89,9 @@ export const Selections: FunctionComponent = () => {
               <TouchableOpacity
                 style={[styles.btmHalfBtnView]}
                 onPress={() => {
-                  navigation.navigate(item.screen)
+                  // setTabSelection(item.screen)
+                  navigation.navigate('Tabs', {selection: item.screen})
+                  // navigation.navigate(item.screen)
                 }}>
                 <LinearGradient
                   style={styles.btmHalfBtn}
