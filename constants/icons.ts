@@ -1,5 +1,6 @@
 const menu = require('../assets/icons/menu.png')
 const search = require('../assets/icons/search.png')
+const home = require('../assets/icons/home_icon.png')
 
 const card_icon = require('../assets/icons/card_icon.png')
 const claim_icon = require('../assets/icons/claim_icon.png')
@@ -18,6 +19,7 @@ const back_arrow_icon = require('../assets/icons/back_arrow_icon.png')
 const more_icon = require('../assets/icons/more_icon.png')
 
 export default {
+  home,
   menu,
   search,
   card_icon,
