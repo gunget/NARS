@@ -1,5 +1,5 @@
 import {useNavigation} from '@react-navigation/native'
-import React, {FunctionComponent, useState} from 'react'
+import React, {FunctionComponent, useEffect, useState} from 'react'
 import {
   FlatList,
   Image,
@@ -14,6 +14,11 @@ import {
 import {SafeAreaView} from 'react-native-safe-area-context'
 import {useNavigationProp} from '../../App'
 import {Colors, Fonts, images, Sizes, icons} from '../../constants'
+import {
+  studioTelNum,
+  studioTelNumType,
+  telNumType,
+} from '../../constants/phoneNumbers'
 import InfoModal from './InfoModal'
 import RenderRecentlyViewed from './RenderRecentlyViewed'
 import RenderTrendingShoes from './RenderTrendingShoes'
@@ -85,107 +90,91 @@ export type recentlyViewedType = {
 
 export const TelOnAir: FunctionComponent = () => {
   const navigation = useNavigation<useNavigationProp>()
-  //Modal Controll
-  const [showAddToBagModal, setShowAddToBagModal] = useState<boolean>(false)
-  const [selectedItem, setSelectedItem] = useState<trendingType>()
-  const [selectedSize, setSelectedSize] = useState<number>()
+  // //Modal Controll
+  // const [showAddToBagModal, setShowAddToBagModal] = useState<boolean>(false)
+  // const [selectedItem, setSelectedItem] = useState<trendingType>()
+  // const [selectedSize, setSelectedSize] = useState<number>()
 
   //DummyData
-  const [trending, setTrending] = useState<trendingType[]>([
-    {
-      id: 0,
-      name: 'Nike Air Zoom Pegasus 36',
-      img: images.nikePegasus36,
-      bgColor: '#BF012C',
-      type: 'RUNNING',
-      price: '$186',
-      sizes: [6, 7, 8, 9, 10],
-    },
+  const [trending, setTrending] = useState<studioTelNumType[]>([
     {
       id: 1,
-      name: 'Nike Metcon 5',
-      img: images.nikeMetcon5Black,
-      bgColor: '#D39C67',
-      type: 'TRAINING',
-      price: '$135',
-      sizes: [6, 7, 8, 9, 10, 11, 12],
-    },
-    {
-      id: 2,
-      name: 'Nike Air Zoom Kobe 1 Proto',
-      img: images.nikeZoomKobe1Proto,
-      bgColor: '#7052A0',
-      type: 'BASKETBALL',
-      price: '$199',
-      sizes: [6, 7, 8, 9],
-    },
-    {
-      id: 3,
-      name: 'Nike Air Zoom Pegasus 36',
-      img: images.nikePegasus36,
+      name: 'NS-1',
+      description: 'N1 Studio 전화참여용 번호',
+      img: images.nikeMetcon3,
+      telNumbers: [
+        {
+          id: 1,
+          name: '자동연결',
+          number: '02-2070-0001',
+          img: images.nikeMetconFree,
+          description:
+            '대표 전화번호로 이 번호로만 걸어도 NS-1에 동시연결 가능',
+        },
+        {
+          id: 2,
+          name: '전화연결2',
+          number: '02-781-0001',
+          img: images.nikeMetcon5Purple,
+          description: '단일 전화 연결용 번호2',
+        },
+        {
+          id: 3,
+          name: '전화연결3',
+          number: '02-781-0002',
+          img: images.nikeZoomKobe1Proto,
+          description: '단일 전화 연결용 번호3',
+        },
+        {
+          id: 4,
+          name: '전화연결4',
+          number: '02-781-0003',
+          img: images.nikeMetconFree,
+          description: '단일 전화 연결용 번호4',
+        },
+      ],
       bgColor: '#BF012C',
       type: 'RUNNING',
       price: '$186',
       sizes: [6, 7, 8, 9, 10],
-    },
-    {
-      id: 4,
-      name: 'Nike Metcon 5',
-      img: images.nikeMetcon5Black,
-      bgColor: '#D39C67',
-      type: 'TRAINING',
-      price: '$135',
-      sizes: [6, 7, 8, 9, 10, 11, 12],
     },
   ])
 
-  const [recentlyViewed, setRecentlyViewed] = useState<recentlyViewedType[]>([
-    {
-      id: 0,
-      name: 'Nike Metcon 4',
-      img: images.nikeMetcon4,
-      bgColor: '#414045',
-      type: 'TRAINING',
-      price: '$119',
-      sizes: [6, 7, 8],
-    },
+  const [recentlyViewed, setRecentlyViewed] = useState<telNumType[]>([
     {
       id: 1,
-      name: 'Nike Metcon 6',
-      img: images.nikeMetcon6,
-      bgColor: '#4EABA6',
-      type: 'TRAINING',
-      price: '$135',
-      sizes: [6, 7, 8, 9, 10, 11],
+      name: '자동연결',
+      number: '02-2070-0001',
+      img: images.nikeMetconFree,
+      description: '대표 전화번호로 이 번호로만 걸어도 NS-1에 동시연결 가능',
     },
     {
       id: 2,
-      name: 'Nike Metcon 5',
+      name: '전화연결2',
+      number: '02-781-0001',
       img: images.nikeMetcon5Purple,
-      bgColor: '#2B4660',
-      type: 'TRAINING',
-      price: '$124',
-      sizes: [6, 7, 8, 9],
+      description: '단일 전화 연결용 번호2',
     },
     {
       id: 3,
-      name: 'Nike Metcon 3',
-      img: images.nikeMetcon3,
-      bgColor: '#A69285',
-      type: 'TRAINING',
-      price: '$99',
-      sizes: [6, 7, 8, 9, 10, 11, 12, 13],
+      name: '전화연결3',
+      number: '02-781-0002',
+      img: images.nikeMetcon5Black,
+      description: '단일 전화 연결용 번호3',
     },
     {
       id: 4,
-      name: 'Nike Metcon Free',
+      name: '전화연결4',
+      number: '02-781-0003',
       img: images.nikeMetconFree,
-      bgColor: '#A02E41',
-      type: 'TRAINING',
-      price: '$108',
-      sizes: [6, 7, 8, 9, 10, 11],
+      description: '단일 전화 연결용 번호4',
     },
   ])
+
+  useEffect(() => {
+    const telNum = studioTelNum
+    setTrending(telNum)
+  }, [])
 
   return (
     <SafeAreaView style={{flex: 1}}>
@@ -220,8 +209,9 @@ export const TelOnAir: FunctionComponent = () => {
               <RenderTrendingShoes
                 item={item}
                 index={index}
-                setItem={setSelectedItem}
-                showModal={setShowAddToBagModal}
+                // setItem={setSelectedItem}
+                // showModal={setShowAddToBagModal}
+                setList={setRecentlyViewed}
               />
             )}
             // ()가 있어야 index를 내려줄 수 있다
@@ -244,14 +234,14 @@ export const TelOnAir: FunctionComponent = () => {
                 <RenderRecentlyViewed
                   item={item}
                   index={index}
-                  setSelectedItem={setSelectedItem}
-                  setShowAddToBagModal={setShowAddToBagModal}
+                  // setSelectedItem={setSelectedItem}
+                  // setShowAddToBagModal={setShowAddToBagModal}
                 />
               )}
             />
           </View>
         </View>
-        {/* modal */}
+        {/* modal
         {selectedItem && (
           <InfoModal
             showAddToBagModal={showAddToBagModal}
@@ -261,7 +251,7 @@ export const TelOnAir: FunctionComponent = () => {
             setSelectedSize={setSelectedSize}
             setShowAddToBagModal={setShowAddToBagModal}
           />
-        )}
+        )} */}
       </View>
     </SafeAreaView>
   )

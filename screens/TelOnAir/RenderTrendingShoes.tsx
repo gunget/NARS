@@ -3,12 +3,14 @@ import {StyleSheet, Text, View, TouchableOpacity, Image} from 'react-native'
 import Svg, {Polygon, Circle} from 'react-native-svg'
 import {trendingType} from '../TelOnAir/TelOnAir'
 import {Colors, Fonts, Sizes} from '../../constants'
+import {studioTelNumType, telNumType} from '../../constants/phoneNumbers'
 
 type propType = {
-  item: trendingType
+  item: studioTelNumType
   index: number
-  setItem: (item: trendingType) => void
-  showModal: (type: boolean) => void
+  // setItem: (item: trendingType) => void
+  // showModal: (type: boolean) => void
+  setList: React.Dispatch<React.SetStateAction<telNumType[]>>
 }
 
 const styles = StyleSheet.create({
@@ -83,8 +85,9 @@ const styles = StyleSheet.create({
 const RenderTrendingShoes: FunctionComponent<propType> = ({
   item,
   index,
-  setItem,
-  showModal,
+  setList,
+  // setItem,
+  // showModal,
 }) => {
   let firstItemStyle = {}
   if (index == 0) {
@@ -95,8 +98,9 @@ const RenderTrendingShoes: FunctionComponent<propType> = ({
     <TouchableOpacity
       style={[styles.mainCT_TO, {...firstItemStyle}]}
       onPress={() => {
-        setItem(item)
-        showModal(true)
+        setList(item.telNumbers)
+        // setItem(item)
+        // showModal(true)
       }}>
       <Text style={styles.topTxt}>{item.type}</Text>
       <View

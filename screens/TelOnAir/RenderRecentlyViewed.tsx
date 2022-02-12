@@ -2,12 +2,13 @@ import React, {FunctionComponent} from 'react'
 import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native'
 import {recentlyViewedType, trendingType} from '../TelOnAir/TelOnAir'
 import {Colors, Fonts, Sizes} from '../../constants'
+import {telNumType} from '../../constants/phoneNumbers'
 
 type propType = {
-  item: recentlyViewedType
+  item: telNumType
   index: number
-  setSelectedItem: (item: trendingType | undefined) => void
-  setShowAddToBagModal: (type: boolean) => void
+  // setSelectedItem: (item: trendingType | undefined) => void
+  // setShowAddToBagModal: (type: boolean) => void
 }
 
 const styles = StyleSheet.create({
@@ -41,22 +42,22 @@ const styles = StyleSheet.create({
 const RenderRecentlyViewed: FunctionComponent<propType> = ({
   item,
   index,
-  setSelectedItem,
-  setShowAddToBagModal,
+  // setSelectedItem,
+  // setShowAddToBagModal,
 }) => {
   return (
     <TouchableOpacity
       style={styles.mainCT_TO}
       onPress={() => {
-        setSelectedItem(item)
-        setShowAddToBagModal(true)
+        // setSelectedItem(item)
+        // setShowAddToBagModal(true)
       }}>
       <View style={styles.lftImgView}>
         <Image source={item.img} resizeMode="contain" style={styles.lftImg} />
       </View>
       <View style={styles.rgtTxtView}>
         <Text style={styles.rgtTxtBody}>{item.name}</Text>
-        <Text style={styles.rgtTxtPrice}>{item.price}</Text>
+        <Text style={styles.rgtTxtPrice}>{item.description}</Text>
       </View>
     </TouchableOpacity>
   )
