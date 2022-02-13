@@ -3,6 +3,7 @@ import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native'
 import {recentlyViewedType, trendingType} from '../TelOnAir/TelOnAir'
 import {Colors, Fonts, Sizes} from '../../constants'
 import {telNumType} from '../../constants/phoneNumbers'
+import * as Linking from 'expo-linking'
 
 type propType = {
   item: telNumType
@@ -51,6 +52,7 @@ const RenderRecentlyViewed: FunctionComponent<propType> = ({
       onPress={() => {
         // setSelectedItem(item)
         // setShowAddToBagModal(true)
+        Linking.openURL(`tel:${item.number}`)
       }}>
       <View style={styles.lftImgView}>
         <Image source={item.img} resizeMode="contain" style={styles.lftImg} />
