@@ -1,16 +1,22 @@
 import React, {FunctionComponent} from 'react'
-import {StyleSheet, Text, View, TouchableOpacity, Image} from 'react-native'
-import Svg, {Polygon, Circle} from 'react-native-svg'
-import {trendingType} from '../TelOnAir/TelOnAir'
+import {
+  StyleSheet,
+  Text,
+  View,
+  TouchableOpacity,
+  Image,
+  FlatList,
+} from 'react-native'
+import Svg, {Polygon} from 'react-native-svg'
 import {Colors, Fonts, Sizes} from '../../constants'
 import {studioTelNumType, telNumType} from '../../constants/phoneNumbers'
 
 type propType = {
   item: studioTelNumType
   index: number
-  // setItem: (item: trendingType) => void
-  // showModal: (type: boolean) => void
   setList: React.Dispatch<React.SetStateAction<telNumType[]>>
+  setListToTop: (flatListRef: React.RefObject<FlatList<any>>) => void
+  flatListRef: React.RefObject<FlatList<any>>
 }
 
 const styles = StyleSheet.create({
@@ -63,6 +69,7 @@ const styles = StyleSheet.create({
     right: 0,
     width: '95%',
     height: '100%',
+    elevation: 0,
   },
 
   trendingShadow: {
@@ -82,12 +89,12 @@ const styles = StyleSheet.create({
   },
 })
 
-const RenderTrendingShoes: FunctionComponent<propType> = ({
+const RenderStudioLists: FunctionComponent<propType> = ({
   item,
   index,
   setList,
-  // setItem,
-  // showModal,
+  setListToTop,
+  flatListRef,
 }) => {
   let firstItemStyle = {}
   if (index == 0) {
@@ -99,15 +106,14 @@ const RenderTrendingShoes: FunctionComponent<propType> = ({
       style={[styles.mainCT_TO, {...firstItemStyle}]}
       onPress={() => {
         setList(item.telNumbers)
-        // setItem(item)
-        // showModal(true)
+        setListToTop(flatListRef)
       }}>
       <Text style={styles.topTxt}>{item.type}</Text>
       <View
         style={[
           styles.boxView,
           styles.trendingShadow,
-          {backgroundColor: item.bgColor, zIndex: 1},
+          {backgroundColor: item.bgColor, zIndex: 0},
         ]}>
         <View style={styles.boxViewTxtView}>
           <Text style={styles.boxViewTxtName}>{item.name}</Text>
@@ -133,4 +139,4 @@ const RenderTrendingShoes: FunctionComponent<propType> = ({
   )
 }
 
-export default RenderTrendingShoes
+export default RenderStudioLists

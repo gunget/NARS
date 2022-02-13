@@ -1,14 +1,11 @@
 import {useNavigation} from '@react-navigation/native'
-import React, {FunctionComponent, useEffect, useState} from 'react'
+import React, {FunctionComponent, useEffect, useRef, useState} from 'react'
 import {
   FlatList,
   Image,
-  ImageSourcePropType,
   StyleSheet,
   Text,
   View,
-  Modal,
-  Alert,
   TouchableOpacity,
 } from 'react-native'
 import {SafeAreaView} from 'react-native-safe-area-context'
@@ -19,9 +16,8 @@ import {
   studioTelNumType,
   telNumType,
 } from '../../constants/phoneNumbers'
-import InfoModal from './InfoModal'
-import RenderRecentlyViewed from './RenderRecentlyViewed'
-import RenderTrendingShoes from './RenderTrendingShoes'
+import RenderNumberLists from './RenderNumberLists'
+import RenderStudioLists from './RenderStudioLists'
 
 const styles = StyleSheet.create({
   mainCT: {
@@ -68,35 +64,12 @@ const styles = StyleSheet.create({
   },
 })
 
-export type trendingType = {
-  id: number
-  name: string
-  img: ImageSourcePropType
-  bgColor: string
-  type: string
-  price: string
-  sizes: number[]
-}
-
-export type recentlyViewedType = {
-  id: number
-  name: string
-  img: ImageSourcePropType
-  bgColor: string
-  type: string
-  price: string
-  sizes: number[]
-}
-
 export const TelOnAir: FunctionComponent = () => {
-  const navigation = useNavigation<useNavigationProp>()
-  // //Modal Controll
-  // const [showAddToBagModal, setShowAddToBagModal] = useState<boolean>(false)
-  // const [selectedItem, setSelectedItem] = useState<trendingType>()
-  // const [selectedSize, setSelectedSize] = useState<number>()
+  const flatListRef = useRef<FlatList>(null)
 
-  //DummyData
-  const [trending, setTrending] = useState<studioTelNumType[]>([
+  const navigation = useNavigation<useNavigationProp>()
+
+  const [studio, setStudio] = useState<studioTelNumType[]>([
     {
       id: 1,
       name: 'NS-1',
@@ -140,7 +113,7 @@ export const TelOnAir: FunctionComponent = () => {
     },
   ])
 
-  const [recentlyViewed, setRecentlyViewed] = useState<telNumType[]>([
+  const [telNums, setTelNums] = useState<telNumType[]>([
     {
       id: 1,
       name: '자동연결',
@@ -171,9 +144,14 @@ export const TelOnAir: FunctionComponent = () => {
     },
   ])
 
+  //전화 flatList 바뀔때마다 제일 위로 올리기
+  const setNumScrollToTop = (flatListRef: React.RefObject<FlatList<any>>) => {
+    flatListRef.current?.scrollToOffset({animated: false, offset: 0})
+  }
+
   useEffect(() => {
-    const telNum = studioTelNum
-    setTrending(telNum)
+    const studioData = studioTelNum
+    setStudio(studioData)
   }, [])
 
   return (
@@ -203,15 +181,15 @@ export const TelOnAir: FunctionComponent = () => {
           <FlatList
             horizontal
             showsHorizontalScrollIndicator={false}
-            data={trending}
+            data={studio}
             keyExtractor={item => item.id.toString()}
             renderItem={({item, index}) => (
-              <RenderTrendingShoes
+              <RenderStudioLists
                 item={item}
                 index={index}
-                // setItem={setSelectedItem}
-                // showModal={setShowAddToBagModal}
-                setList={setRecentlyViewed}
+                setList={setTelNums}
+                setListToTop={setNumScrollToTop}
+                flatListRef={flatListRef}
               />
             )}
             // ()가 있어야 index를 내려줄 수 있다
@@ -227,31 +205,16 @@ export const TelOnAir: FunctionComponent = () => {
           </View>
           <View style={styles.bttmRgtView}>
             <FlatList
+              ref={flatListRef}
               showsVerticalScrollIndicator={false}
-              data={recentlyViewed}
+              data={telNums}
               keyExtractor={item => item.id.toString()}
               renderItem={({item, index}) => (
-                <RenderRecentlyViewed
-                  item={item}
-                  index={index}
-                  // setSelectedItem={setSelectedItem}
-                  // setShowAddToBagModal={setShowAddToBagModal}
-                />
+                <RenderNumberLists item={item} index={index} />
               )}
             />
           </View>
         </View>
-        {/* modal
-        {selectedItem && (
-          <InfoModal
-            showAddToBagModal={showAddToBagModal}
-            selectedItem={selectedItem}
-            selectedSize={selectedSize}
-            setSelectedItem={setSelectedItem}
-            setSelectedSize={setSelectedSize}
-            setShowAddToBagModal={setShowAddToBagModal}
-          />
-        )} */}
       </View>
     </SafeAreaView>
   )

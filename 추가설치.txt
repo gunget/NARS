@@ -7,6 +7,8 @@ npm install @react-navigation/native react-native-reanimated react-native-gestur
 
 // expo install react-native-linear-gradient //그라디언트 버튼
 
+// expo install expo-linking //전화걸기 앱
+
 //splash screen 띄우기
 - expo에서는 간단하게 지원됨
 - app.json에서 expo부분 편집. icon, splash, android부분에 아래내용 추가

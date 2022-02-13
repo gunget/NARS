@@ -1,6 +1,5 @@
 import React, {FunctionComponent} from 'react'
 import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native'
-import {recentlyViewedType, trendingType} from '../TelOnAir/TelOnAir'
 import {Colors, Fonts, Sizes} from '../../constants'
 import {telNumType} from '../../constants/phoneNumbers'
 import * as Linking from 'expo-linking'
@@ -8,8 +7,6 @@ import * as Linking from 'expo-linking'
 type propType = {
   item: telNumType
   index: number
-  // setSelectedItem: (item: trendingType | undefined) => void
-  // setShowAddToBagModal: (type: boolean) => void
 }
 
 const styles = StyleSheet.create({
@@ -40,18 +37,11 @@ const styles = StyleSheet.create({
   },
 })
 
-const RenderRecentlyViewed: FunctionComponent<propType> = ({
-  item,
-  index,
-  // setSelectedItem,
-  // setShowAddToBagModal,
-}) => {
+const RenderNumberLists: FunctionComponent<propType> = ({item, index}) => {
   return (
     <TouchableOpacity
       style={styles.mainCT_TO}
       onPress={() => {
-        // setSelectedItem(item)
-        // setShowAddToBagModal(true)
         Linking.openURL(`tel:${item.number}`)
       }}>
       <View style={styles.lftImgView}>
@@ -65,4 +55,4 @@ const RenderRecentlyViewed: FunctionComponent<propType> = ({
   )
 }
 
-export default RenderRecentlyViewed
+export default RenderNumberLists
