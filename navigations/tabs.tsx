@@ -5,6 +5,7 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs'
 import {Colors, icons} from '../constants'
 import {TelOnAir, MNGRpt, MNGCam} from '../screens'
 import {TabsRouteProp} from '../App'
+import {Contacts} from '../screens/Contacts/Contacts'
 
 //stack navigator에서 route간 데이터 전달을 위한 route
 type propType = {route: TabsRouteProp}
@@ -19,6 +20,7 @@ const iconsArray: Record<string, ImageSourcePropType> = {
   TelOnAir: icons.dashboard_icon,
   MNGRpt: icons.search_icon,
   MNGCam: icons.notification_icon,
+  Contacts: icons.page_icon,
 }
 
 const Tab = createBottomTabNavigator()
@@ -27,12 +29,12 @@ const groupOptions = ({route}: routeProp) => ({
   tabBarShowLabel: false, //하단 탭이름 없애기
   tabBarStyle: {
     height: '9%',
-    backgroundColor: Colors.gray,
+    backgroundColor: Colors.lightGray,
   },
   tabBarIcon: ({focused, color, size}: TabBarIconProps) => {
     const {name} = route //Tab.screens에 설정한 이름이 옴. 각 스크린마다 한번씩 오게 됨
     const focusedSize = focused ? 10 : 0
-    const tintColor = focused ? 'dodgerblue' : Colors.white
+    const tintColor = focused ? Colors.black : Colors.white
     const icon = iconsArray[name] //destructive를 사용해 해당 key로 value를 동시에 선언하기
     return (
       <Image
@@ -57,6 +59,7 @@ const Tabs: FunctionComponent<propType> = ({route}) => {
       <Tab.Screen name="TelOnAir" component={TelOnAir} />
       <Tab.Screen name="MNGRpt" component={MNGRpt} />
       <Tab.Screen name="MNGCam" component={MNGCam} />
+      <Tab.Screen name="Contacts" component={Contacts} />
     </Tab.Navigator>
   )
 }
