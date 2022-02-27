@@ -7,9 +7,9 @@ const nikeMetconFree = require('../assets/images/nike-metcon-free.png')
 const nikePegasus36 = require('../assets/images/nike-pegasus-36.png')
 const nikeZoomKobe1Proto = require('../assets/images/nike-zoom-kobe-1-protro.png')
 const recentlyViewedLabel = require('../assets/images/recently-viewed-label.png')
-const OnBdImg1 = require('../assets/images/onboarding-1.png')
-const OnBdImg2 = require('../assets/images/onboarding-2.png')
-const OnBdImg3 = require('../assets/images/onboarding-3.png')
+const selectionImg1 = require('../assets/images/selection1.png')
+const selectionImg2 = require('../assets/images/selection2.png')
+const selectionImg3 = require('../assets/images/selection3.png')
 
 export default {
   nikeMetcon3,
@@ -21,7 +21,7 @@ export default {
   nikePegasus36,
   nikeZoomKobe1Proto,
   recentlyViewedLabel,
-  OnBdImg1,
-  OnBdImg2,
-  OnBdImg3,
+  selectionImg1,
+  selectionImg2,
+  selectionImg3,
 }

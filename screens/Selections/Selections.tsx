@@ -13,38 +13,39 @@ import {Colors, Sizes, images, icons, Fonts, themes} from '../../constants'
 import {LinearGradient} from 'expo-linear-gradient'
 import {useNavigation} from '@react-navigation/native'
 import {RootStackParamList, useNavigationProp} from '../../App'
+import {selectionData} from '../../constants/phoneNumbers'
 
-export type dummyDataType = {
-  title: string
-  description: string
-  img: ImageSourcePropType
-  screen: string
-  // screen: keyof RootStackParamList
-}
+// export type dummyDataType = {
+//   title: string
+//   description: string
+//   img: ImageSourcePropType
+//   screen: string
+//   // screen: keyof RootStackParamList
+// }
 
-const dummyData: dummyDataType[] = [
-  {
-    title: '부조 전화연결',
-    description:
-      '전화연결로 생방송에 참여 시, 담당 기자가 사용하는 전화번호 모음 ',
-    img: images.OnBdImg1,
-    screen: 'TelOnAir',
-  },
-  {
-    title: 'MNG - 기자용',
-    description:
-      'MNG 연결 시, ARS를 통해 기자가 앵커목소리를 듣고 싶을때 사용. (N-1)',
-    img: images.OnBdImg2,
-    screen: 'MNGRpt',
-  },
-  {
-    title: 'MNG - 촬영기자용',
-    description:
-      'MNG 연결 시, ARS를 통해 촬영기자가 PD Call을 듣고 싶을때 사용 ',
-    img: images.OnBdImg3,
-    screen: 'MNGCam',
-  },
-]
+// const selectionData: dummyDataType[] = [
+//   {
+//     title: '부조 전화연결',
+//     description:
+//       '전화연결로 생방송에 참여 시, 담당 기자가 사용하는 전화번호 모음 ',
+//     img: images.selectionImg1,
+//     screen: 'TelOnAir',
+//   },
+//   {
+//     title: 'MNG - 기자용',
+//     description:
+//       'MNG 연결 시, ARS를 통해 기자가 앵커목소리를 듣고 싶을때 사용. (N-1)',
+//     img: images.selectionImg2,
+//     screen: 'MNGRpt',
+//   },
+//   {
+//     title: 'MNG - 촬영기자용',
+//     description:
+//       'MNG 연결 시, ARS를 통해 촬영기자가 PD Call을 듣고 싶을때 사용 ',
+//     img: images.selectionImg3,
+//     screen: 'MNGCam',
+//   },
+// ]
 
 export const Selections: FunctionComponent = () => {
   // const [tabSelection, setTabSelection] = useState('TelOnAir')
@@ -72,7 +73,7 @@ export const Selections: FunctionComponent = () => {
         )}>
         {/*Animated.event: 이벤트 발생시 복잡한 이벤트 객체에서 특정값만을 추출해 AnimatedValue로 할당해 줌
         여기선 Scroll이 발생했을때 X축으로 얼마나 이동했는가를 Value에 할당함 */}
-        {dummyData.map((item, index) => (
+        {selectionData.map((item, index) => (
           <View key={index} style={styles.pageWidthContainer}>
             <View style={styles.imageConatiner}>
               <Image
@@ -113,7 +114,7 @@ export const Selections: FunctionComponent = () => {
     // 첫화면 0, 두번째로 스크롤시 1, 세번째로 스크롤시 2가 됨
     return (
       <View style={styles.dotsContainer}>
-        {dummyData.map((item, index) => {
+        {selectionData.map((item, index) => {
           const opacity = dotPosition.interpolate({
             inputRange: [index - 1, index, index + 1], //각 컴포넌트에 맵핑되는 inputValue Range. 순서에 따라 다 달라짐
             outputRange: [0.3, 1, 0.3],

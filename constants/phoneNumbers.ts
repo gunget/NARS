@@ -41,6 +41,14 @@ export type studioArsNumType = {
   sizes: number[]
 }
 
+export type selectionDataType = {
+  title: string
+  description: string
+  img: ImageSourcePropType
+  screen: string
+  // screen: keyof RootStackParamList
+}
+
 export const studioTelNum: studioTelNumType[] = [
   {
     id: 1,
@@ -609,5 +617,29 @@ export const studioConNum: studioTelNumType[] = [
     type: 'RUNNING',
     price: '$186',
     sizes: [6, 7, 8, 9, 10],
+  },
+]
+
+export const selectionData: selectionDataType[] = [
+  {
+    title: '부조 전화연결',
+    description:
+      '전화연결로 생방송에 참여 시, 담당 기자가 사용하는 전화번호 모음 ',
+    img: images.selectionImg1,
+    screen: 'TelOnAir',
+  },
+  {
+    title: 'MNG - 기자용',
+    description:
+      'MNG 연결 시, ARS를 통해 기자가 앵커목소리를 듣고 싶을때 사용. (N-1)',
+    img: images.selectionImg2,
+    screen: 'MNGRpt',
+  },
+  {
+    title: 'MNG - 촬영기자용',
+    description:
+      'MNG 연결 시, ARS를 통해 촬영기자가 PD Call을 듣고 싶을때 사용 ',
+    img: images.selectionImg3,
+    screen: 'MNGCam',
   },
 ]
