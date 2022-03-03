@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
     ...Fonts.body3,
   },
   rgtTxtPrice: {
-    ...Fonts.h3,
+    ...Fonts.body4,
   },
   rgtTxtView: {
     flex: 1.5,

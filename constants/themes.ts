@@ -5,6 +5,7 @@ const {width, height} = Dimensions.get('window')
 export const Colors = {
   // colors
   black: '#1E1F20',
+  darkBlue: '#3a5978',
   white: '#FFFFFF',
   lightGray: '#ABAFB8',
   gray: '#BEC1D2',
@@ -35,36 +36,40 @@ export const Sizes = {
   height,
 }
 
+const thin = 'Cafe24Sp'
+const bold = 'Cafe24DJ'
+const regular = 'Cafe24Sp'
+
 export const Fonts = {
-  navTitle: {fontFamily: 'CarmenSans-Thin', fontSize: Sizes.navTitle},
-  largeTitleBold: {fontFamily: 'CarmenSans-SemiBold', fontSize: Sizes.h2},
-  h1: {fontFamily: 'CarmenSans-SemiBold', fontSize: Sizes.h1, lineHeight: 36},
-  h2: {fontFamily: 'CarmenSans-SemiBold', fontSize: Sizes.h2, lineHeight: 30},
-  h3: {fontFamily: 'CarmenSans-SemiBold', fontSize: Sizes.h3, lineHeight: 22},
-  h4: {fontFamily: 'CarmenSans-SemiBold', fontSize: Sizes.h4, lineHeight: 22},
-  h5: {fontFamily: 'CarmenSans-SemiBold', fontSize: Sizes.h5, lineHeight: 22},
+  navTitle: {fontFamily: thin, fontSize: Sizes.navTitle},
+  largeTitleBold: {fontFamily: bold, fontSize: Sizes.h2},
+  h1: {fontFamily: bold, fontSize: Sizes.h1, lineHeight: 36},
+  h2: {fontFamily: bold, fontSize: Sizes.h2, lineHeight: 30},
+  h3: {fontFamily: bold, fontSize: Sizes.h3, lineHeight: 22},
+  h4: {fontFamily: bold, fontSize: Sizes.h4, lineHeight: 22},
+  h5: {fontFamily: bold, fontSize: Sizes.h5, lineHeight: 22},
   body1: {
-    fontFamily: 'CarmenSans-Regular',
+    fontFamily: regular,
     fontSize: Sizes.body1,
     lineHeight: 36,
   },
   body2: {
-    fontFamily: 'CarmenSans-Regular',
+    fontFamily: regular,
     fontSize: Sizes.body2,
     lineHeight: 30,
   },
   body3: {
-    fontFamily: 'CarmenSans-Regular',
+    fontFamily: regular,
     fontSize: Sizes.body3,
     lineHeight: 22,
   },
   body4: {
-    fontFamily: 'CarmenSans-Regular',
+    fontFamily: regular,
     fontSize: Sizes.body4,
     lineHeight: 22,
   },
   body5: {
-    fontFamily: 'CarmenSans-Regular',
+    fontFamily: regular,
     fontSize: Sizes.body5,
     lineHeight: 22,
   },

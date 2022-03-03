@@ -97,7 +97,7 @@ export const Selections: FunctionComponent = () => {
                 <LinearGradient
                   style={styles.btmHalfBtn}
                   colors={['#46aeff', '#5884ff']}>
-                  <Text style={styles.btmHalfBtnTxt}>Connect</Text>
+                  <Text style={styles.btmHalfBtnTxt}>Let's Go</Text>
                 </LinearGradient>
               </TouchableOpacity>
             </View>
@@ -201,11 +201,11 @@ const styles = StyleSheet.create({
   description: {
     ...Fonts.body3,
     textAlign: 'center',
-    color: Colors.gray,
+    color: Colors.darkBlue,
     marginTop: Sizes.base,
   },
   dots: {
-    backgroundColor: Colors.black,
+    backgroundColor: Colors.darkBlue,
     borderRadius: Sizes.radius,
     marginHorizontal: Sizes.radius / 2,
   },
@@ -239,7 +239,7 @@ const styles = StyleSheet.create({
   },
   title: {
     ...Fonts.h1, //폰트관련 설정을 한번에 하는 방식
-    color: Colors.gray,
+    color: Colors.darkBlue,
     textAlign: 'center',
   },
 })

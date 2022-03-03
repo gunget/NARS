@@ -71,12 +71,13 @@ const Stack = createStackNavigator<RootStackParamList>()
 const App: FunctionComponent = () => {
   const [appIsReady, setAppIsReady] = useState(false)
   const [fontsLoaded] = useFonts({
-    'Roboto-Black': require('./assets/fonts/Roboto-Black.ttf'),
-    'Roboto-Bold': require('./assets/fonts/Roboto-Bold.ttf'),
-    'Roboto-Regular': require('./assets/fonts/Roboto-Regular.ttf'),
-    'CarmenSans-Thin': require('./assets/fonts/CarmenSans-Thin.otf'),
-    'CarmenSans-SemiBold': require('./assets/fonts/CarmenSans-SemiBold.otf'),
-    'CarmenSans-Regular': require('./assets/fonts/CarmenSans-Regular.otf'),
+    GodoM: require('./assets/fonts/GodoM.otf'),
+    GodoB: require('./assets/fonts/GodoB.otf'),
+    GodoR: require('./assets/fonts/GodoM.otf'),
+    SDKukdaeL: require('./assets/fonts/SDKukdetopokki-aLt.otf'),
+    SDKukdaeB: require('./assets/fonts/SDKukdetopokki-bBd.otf'),
+    Cafe24DJ: require('./assets/fonts/Cafe24Danjunghae.ttf'),
+    Cafe24Sp: require('./assets/fonts/Cafe24Simplehae.ttf'),
   })
 
   useEffect(() => {

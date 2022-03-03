@@ -132,7 +132,7 @@ export const studioTelNum: studioTelNumType[] = [
   },
   {
     id: 3,
-    name: 'RAON',
+    name: 'NS-4 ( 재난 )',
     description: 'N4 Studio 전화참여용 번호',
     img: images.nikeMetcon6,
     telNumbers: [
@@ -629,14 +629,14 @@ export const selectionData: selectionDataType[] = [
     screen: 'TelOnAir',
   },
   {
-    title: 'MNG - 기자용',
+    title: 'MNG참여 - 기자',
     description:
       'MNG 연결 시, ARS를 통해 기자가 앵커목소리를 듣고 싶을때 사용. (N-1)',
     img: images.selectionImg2,
     screen: 'MNGRpt',
   },
   {
-    title: 'MNG - 촬영기자용',
+    title: 'MNG참여 - 촬영기자',
     description:
       'MNG 연결 시, ARS를 통해 촬영기자가 PD Call을 듣고 싶을때 사용 ',
     img: images.selectionImg3,
