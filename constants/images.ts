@@ -10,6 +10,22 @@ const recentlyViewedLabel = require('../assets/images/recently-viewed-label.png'
 const selectionImg1 = require('../assets/images/selection1.png')
 const selectionImg2 = require('../assets/images/selection2.png')
 const selectionImg3 = require('../assets/images/selection3.png')
+const bookmark = require('../assets/images/bookmark-fav2.png')
+const mapPin = require('../assets/images/map-pin.png')
+const notebook = require('../assets/images/notebook2.png')
+const flag = require('../assets/images/flag.png')
+
+// //not used
+// const thumb = require('../assets/images/thumb-up.png')
+// const radio = require('../assets/images/headphone.png')
+// const file = require('../assets/images/file-text.png')
+// const pin = require('../assets/images/pin.png')
+// const calender = require('../assets/images/calender.png')
+// const copy = require('../assets/images/copy.png')
+// const favFolder = require('../assets/images/fav-folder.png')
+// const folder = require('../assets/images/folder.png')
+// const link = require('../assets/images/link.png')
+// const link2 = require('../assets/images/link2.png')
 
 export default {
   nikeMetcon3,
@@ -24,4 +40,18 @@ export default {
   selectionImg1,
   selectionImg2,
   selectionImg3,
+  mapPin,
+  bookmark,
+  flag,
+  notebook,
+  // file,
+  // thumb,
+  // radio,
+  // calender,
+  // copy,
+  // favFolder,
+  // folder,
+  // link,
+  // link2,
+  // pin,
 }

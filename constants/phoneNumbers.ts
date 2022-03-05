@@ -54,7 +54,7 @@ export const studioTelNum: studioTelNumType[] = [
     id: 1,
     name: 'NS-1',
     description: 'N1 Studio 전화참여용 번호',
-    img: images.nikeMetcon3,
+    img: images.mapPin,
     telNumbers: [
       {
         id: 1,
@@ -85,7 +85,7 @@ export const studioTelNum: studioTelNumType[] = [
         description: '단일 전화 연결용 번호4',
       },
     ],
-    bgColor: '#BF012C',
+    bgColor: '#D7384E',
     type: 'RUNNING',
     price: '$186',
     sizes: [6, 7, 8, 9, 10],
@@ -94,7 +94,7 @@ export const studioTelNum: studioTelNumType[] = [
     id: 2,
     name: 'NS-2',
     description: 'N2 Studio 전화참여용 번호',
-    img: images.nikeZoomKobe1Proto,
+    img: images.bookmark,
     telNumbers: [
       {
         id: 1,
@@ -125,7 +125,7 @@ export const studioTelNum: studioTelNumType[] = [
         description: '단일 전화 연결용 번호4',
       },
     ],
-    bgColor: '#D39C67',
+    bgColor: '#965DC2',
     type: 'TRAINING',
     price: '$135',
     sizes: [6, 7, 8, 9, 10, 11, 12],
@@ -134,7 +134,7 @@ export const studioTelNum: studioTelNumType[] = [
     id: 3,
     name: 'NS-4 ( 재난 )',
     description: 'N4 Studio 전화참여용 번호',
-    img: images.nikeMetcon6,
+    img: images.flag,
     telNumbers: [
       {
         id: 1,
@@ -165,7 +165,7 @@ export const studioTelNum: studioTelNumType[] = [
         description: '단일 전화 연결용 번호4',
       },
     ],
-    bgColor: '#7052A0',
+    bgColor: '#0978D9',
     type: 'BASKETBALL',
     price: '$199',
     sizes: [6, 7, 8, 9],
@@ -174,7 +174,7 @@ export const studioTelNum: studioTelNumType[] = [
     id: 4,
     name: 'RAON',
     description: 'RAON Studio 전화참여용 번호',
-    img: images.nikeMetcon5Black,
+    img: images.notebook,
     telNumbers: [
       {
         id: 1,
@@ -205,7 +205,7 @@ export const studioTelNum: studioTelNumType[] = [
         description: '단일 전화 연결용 번호4',
       },
     ],
-    bgColor: '#BF012C',
+    bgColor: '#008DA5',
     type: 'RUNNING',
     price: '$186',
     sizes: [6, 7, 8, 9, 10],

@@ -20,6 +20,7 @@ export const Sizes = {
 
   // font sizes
   navTitle: 25,
+  studioTitle: 60,
   h1: 30,
   h2: 22,
   h3: 16,
@@ -39,10 +40,12 @@ export const Sizes = {
 const thin = 'Cafe24Sp'
 const bold = 'Cafe24DJ'
 const regular = 'Cafe24Sp'
+const title = 'SDKukdaeL'
 
 export const Fonts = {
   navTitle: {fontFamily: thin, fontSize: Sizes.navTitle},
   largeTitleBold: {fontFamily: bold, fontSize: Sizes.h2},
+  studioTitleBold: {fontFamily: title, fontSize: Sizes.studioTitle},
   h1: {fontFamily: bold, fontSize: Sizes.h1, lineHeight: 36},
   h2: {fontFamily: bold, fontSize: Sizes.h2, lineHeight: 30},
   h3: {fontFamily: bold, fontSize: Sizes.h3, lineHeight: 22},

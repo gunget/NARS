@@ -35,10 +35,18 @@ const styles = StyleSheet.create({
   },
   boxViewImage: {
     position: 'absolute',
+    top: 10,
+    left: 12,
+    width: '110%',
+    height: 140,
+    // transform: [{rotate: '5deg'}],
+  },
+  boxViewImage2: {
+    position: 'absolute',
     top: 50,
     right: 0,
-    width: '98%',
-    height: 80,
+    ...Fonts.studioTitleBold,
+    color: Colors.gray,
     transform: [{rotate: '-15deg'}],
   },
   boxViewTxtName: {
@@ -134,7 +142,11 @@ const RenderStudioLists: FunctionComponent<propType> = ({
           /> */}
         </Svg>
       </View>
-      <Image source={item.img} resizeMode="cover" style={styles.boxViewImage} />
+      <Image
+        source={item.img}
+        resizeMode="contain"
+        style={styles.boxViewImage}
+      />
     </TouchableOpacity>
   )
 }

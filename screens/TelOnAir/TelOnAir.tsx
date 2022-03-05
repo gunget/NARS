@@ -74,7 +74,7 @@ export const TelOnAir: FunctionComponent = () => {
       id: 1,
       name: 'NS-1',
       description: 'N1 Studio 전화참여용 번호',
-      img: images.nikeMetcon3,
+      img: images.mapPin,
       telNumbers: [
         {
           id: 1,
@@ -172,7 +172,7 @@ export const TelOnAir: FunctionComponent = () => {
             <Image
               source={icons.home}
               resizeMode="cover"
-              style={{width: 25, height: 25, tintColor: Colors.gray}}
+              style={{width: 25, height: 25, tintColor: Colors.black}}
             />
           </TouchableOpacity>
         </View>
