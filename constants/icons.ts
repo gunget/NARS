@@ -17,10 +17,16 @@ const bookmark_icon = require('../assets/icons/bookmark_icon.png')
 const read_icon = require('../assets/icons/read_icon.png')
 const back_arrow_icon = require('../assets/icons/back_arrow_icon.png')
 const more_icon = require('../assets/icons/more_icon.png')
+const phone1 = require('../assets/icons/phone1.png')
+const phone2 = require('../assets/icons/phone2.png')
+const phoneAuto = require('../assets/icons/phone_auto.png')
 
 export default {
   home,
   menu,
+  phone1,
+  phoneAuto,
+  phone2,
   search,
   card_icon,
   claim_icon,

@@ -14,9 +14,9 @@ const bookmark = require('../assets/images/bookmark-fav2.png')
 const mapPin = require('../assets/images/map-pin.png')
 const notebook = require('../assets/images/notebook2.png')
 const flag = require('../assets/images/flag.png')
+const thumb = require('../assets/images/thumb-up.png')
 
 // //not used
-// const thumb = require('../assets/images/thumb-up.png')
 // const radio = require('../assets/images/headphone.png')
 // const file = require('../assets/images/file-text.png')
 // const pin = require('../assets/images/pin.png')
@@ -30,6 +30,7 @@ const flag = require('../assets/images/flag.png')
 export default {
   nikeMetcon3,
   nikeMetcon4,
+  thumb,
   nikeMetcon5Black,
   nikeMetcon5Purple,
   nikeMetcon6,

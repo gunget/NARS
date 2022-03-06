@@ -82,7 +82,7 @@ export const TelOnAir: FunctionComponent = () => {
           id: 1,
           name: '자동연결',
           number: '02-2070-0001',
-          img: images.nikeMetconFree,
+          img: icons.phoneAuto,
           description:
             '대표 전화번호로 이 번호로만 걸어도 NS-1에 동시연결 가능',
         },
@@ -90,25 +90,25 @@ export const TelOnAir: FunctionComponent = () => {
           id: 2,
           name: '전화연결2',
           number: '02-781-0001',
-          img: images.nikeMetcon5Purple,
+          img: icons.phoneAuto,
           description: '단일 전화 연결용 번호2',
         },
         {
           id: 3,
           name: '전화연결3',
           number: '02-781-0002',
-          img: images.nikeZoomKobe1Proto,
+          img: icons.phoneAuto,
           description: '단일 전화 연결용 번호3',
         },
         {
           id: 4,
           name: '전화연결4',
           number: '02-781-0003',
-          img: images.nikeMetconFree,
+          img: icons.phoneAuto,
           description: '단일 전화 연결용 번호4',
         },
       ],
-      bgColor: '#BF012C',
+      bgColor: Colors.NS1,
       type: 'RUNNING',
       price: '$186',
       sizes: [6, 7, 8, 9, 10],
@@ -120,31 +120,34 @@ export const TelOnAir: FunctionComponent = () => {
       id: 1,
       name: '자동연결',
       number: '02-2070-0001',
-      img: images.nikeMetconFree,
+      img: icons.phoneAuto,
       description: '대표 전화번호로 이 번호로만 걸어도 NS-1에 동시연결 가능',
     },
     {
       id: 2,
       name: '전화연결2',
       number: '02-781-0001',
-      img: images.nikeMetcon5Purple,
+      img: icons.phoneAuto,
       description: '단일 전화 연결용 번호2',
     },
     {
       id: 3,
       name: '전화연결3',
       number: '02-781-0002',
-      img: images.nikeMetcon5Black,
+      img: icons.phoneAuto,
       description: '단일 전화 연결용 번호3',
     },
     {
       id: 4,
       name: '전화연결4',
       number: '02-781-0003',
-      img: images.nikeMetconFree,
+      img: icons.phoneAuto,
       description: '단일 전화 연결용 번호4',
     },
   ])
+
+  //대표전화 studio색깔로 바꿔주기
+  const [stdColor, setStdColor] = useState<string>(Colors.NS1)
 
   //전화 flatList 바뀔때마다 제일 위로 올리기
   const setNumScrollToTop = (flatListRef: React.RefObject<FlatList<any>>) => {
@@ -191,6 +194,7 @@ export const TelOnAir: FunctionComponent = () => {
                 index={index}
                 setList={setTelNums}
                 setListToTop={setNumScrollToTop}
+                setStdColor={setStdColor}
                 flatListRef={flatListRef}
               />
             )}
@@ -212,7 +216,11 @@ export const TelOnAir: FunctionComponent = () => {
               data={telNums}
               keyExtractor={item => item.id.toString()}
               renderItem={({item, index}) => (
-                <RenderNumberLists item={item} index={index} />
+                <RenderNumberLists
+                  item={item}
+                  index={index}
+                  stdColor={stdColor}
+                />
               )}
             />
           </View>

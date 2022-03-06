@@ -7,16 +7,19 @@ import * as Linking from 'expo-linking'
 type propType = {
   item: telNumType
   index: number
+  stdColor: string
 }
 
 const styles = StyleSheet.create({
   mainCT_TO: {
     flex: 1,
     flexDirection: 'row',
+    paddingVertical: 8,
   },
   lftImg: {
-    width: 130,
-    height: 85,
+    width: 60,
+    height: 60,
+    // tintColor: '#D7384E',
   },
   lftImgView: {
     flex: 1,
@@ -37,7 +40,11 @@ const styles = StyleSheet.create({
   },
 })
 
-const RenderNumberLists: FunctionComponent<propType> = ({item, index}) => {
+const RenderNumberLists: FunctionComponent<propType> = ({
+  item,
+  index,
+  stdColor,
+}) => {
   return (
     <TouchableOpacity
       style={styles.mainCT_TO}
@@ -45,7 +52,14 @@ const RenderNumberLists: FunctionComponent<propType> = ({item, index}) => {
         Linking.openURL(`tel:${item.number}`)
       }}>
       <View style={styles.lftImgView}>
-        <Image source={item.img} resizeMode="contain" style={styles.lftImg} />
+        <Image
+          source={item.img}
+          resizeMode="contain"
+          style={[
+            styles.lftImg,
+            {tintColor: index == 0 ? stdColor : Colors.black},
+          ]}
+        />
       </View>
       <View style={styles.rgtTxtView}>
         <Text style={styles.rgtTxtBody}>{item.name}</Text>

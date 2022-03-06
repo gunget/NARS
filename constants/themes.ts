@@ -9,6 +9,12 @@ export const Colors = {
   white: '#FFFFFF',
   lightGray: '#ABAFB8',
   gray: '#BEC1D2',
+
+  //studio main theme color
+  NS1: '#D7384E',
+  NS2: '#965DC2',
+  NS4: '#0978D9',
+  RaOn: '#008DA5',
 }
 
 export const Sizes = {
