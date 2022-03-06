@@ -141,7 +141,7 @@ export const studioTelNum: studioTelNumType[] = [
         name: '자동연결',
         number: '02-2070-0004',
         img: images.nikeMetcon4,
-        description: '대표 전화번호로 이 번호로만 걸어도 RAON에 동시연결 가능',
+        description: '대표 전화번호로 이 번호로만 걸어도 NS-4에 동시연결 가능',
       },
       {
         id: 2,

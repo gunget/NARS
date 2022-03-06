@@ -37,16 +37,17 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     marginTop: Sizes.padding,
-    borderTopRightRadius: 30,
-    borderTopLeftRadius: 30,
+    borderTopRightRadius: 20,
+    borderTopLeftRadius: 20,
     backgroundColor: Colors.white,
+    borderTopColor: Colors.lightGray,
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
       height: 10,
     },
-    shadowOpacity: 0.43,
-    shadowRadius: 9.51,
+    shadowOpacity: 0.5,
+    shadowRadius: 9.5,
 
     elevation: 15,
   },
@@ -60,7 +61,8 @@ const styles = StyleSheet.create({
   },
   bttmRgtView: {
     flex: 1,
-    paddingBottom: Sizes.padding,
+    paddingTop: Sizes.radius,
+    paddingBottom: Sizes.radius,
   },
 })
 
