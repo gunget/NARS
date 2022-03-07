@@ -134,7 +134,7 @@ export const studioTelNum: studioTelNumType[] = [
   },
   {
     id: 3,
-    name: 'NS-4 ( 재난 )',
+    name: 'NS-4',
     description: 'N4 Studio 전화참여용 번호',
     img: images.flag,
     telNumbers: [

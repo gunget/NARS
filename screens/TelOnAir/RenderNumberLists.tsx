@@ -7,7 +7,7 @@ import * as Linking from 'expo-linking'
 type propType = {
   item: telNumType
   index: number
-  stdColor: string
+  stdColor: {color: string; name: string}
 }
 
 const styles = StyleSheet.create({
@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
   },
   lftImg: {
     width: 60,
-    height: 60,
+    height: 85,
     // tintColor: '#D7384E',
   },
   lftImgView: {
@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
     ...Fonts.body4,
   },
   rgtTxtView: {
-    flex: 1.5,
+    flex: 2,
     marginLeft: Sizes.radius,
     justifyContent: 'center',
   },
@@ -57,7 +57,7 @@ const RenderNumberLists: FunctionComponent<propType> = ({
           resizeMode="contain"
           style={[
             styles.lftImg,
-            {tintColor: index == 0 ? stdColor : Colors.black},
+            {tintColor: index == 0 ? stdColor.color : Colors.black},
           ]}
         />
       </View>

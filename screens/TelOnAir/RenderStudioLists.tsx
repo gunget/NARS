@@ -15,7 +15,12 @@ type propType = {
   item: studioTelNumType
   index: number
   setList: React.Dispatch<React.SetStateAction<telNumType[]>>
-  setStdColor: React.Dispatch<React.SetStateAction<string>>
+  setStdColor: React.Dispatch<
+    React.SetStateAction<{
+      color: string
+      name: string
+    }>
+  >
   setListToTop: (flatListRef: React.RefObject<FlatList<any>>) => void
   flatListRef: React.RefObject<FlatList<any>>
 }
@@ -117,7 +122,7 @@ const RenderStudioLists: FunctionComponent<propType> = ({
       onPress={() => {
         setList(item.telNumbers)
         setListToTop(flatListRef)
-        setStdColor(item.bgColor)
+        setStdColor({color: item.bgColor, name: item.name})
       }}>
       <Text style={styles.topTxt}>{item.type}</Text>
       <View

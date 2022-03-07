@@ -55,6 +55,21 @@ const styles = StyleSheet.create({
     width: 70,
     marginLeft: Sizes.base,
   },
+  bttmLftViewTxtView: {
+    flex: 1,
+    width: 300,
+    flexDirection: 'column',
+    justifyContent: 'center',
+    backgroundColor: 'transparent',
+  },
+  bttmLftViewTxtViewTxt: {
+    letterSpacing: -1,
+    opacity: 0.4,
+    height: 40,
+    textAlign: 'center',
+    transform: [{rotate: '-90deg'}, {translateY: -105}],
+    ...Fonts.studioTitleBold,
+  },
   bttmLftImg: {
     width: '100%',
     height: '100%',
@@ -147,7 +162,7 @@ export const TelOnAir: FunctionComponent = () => {
   ])
 
   //대표전화 studio색깔로 바꿔주기
-  const [stdColor, setStdColor] = useState<string>(Colors.NS1)
+  const [stdColor, setStdColor] = useState({color: Colors.NS1, name: 'NS-1'})
 
   //전화 flatList 바뀔때마다 제일 위로 올리기
   const setNumScrollToTop = (flatListRef: React.RefObject<FlatList<any>>) => {
@@ -203,11 +218,17 @@ export const TelOnAir: FunctionComponent = () => {
         </View>
         <View style={styles.bttmFLCT}>
           <View style={styles.bttmLftView}>
-            <Image
+            {/* <Image
               source={images.recentlyViewedLabel}
               resizeMode="contain"
               style={styles.bttmLftImg}
-            />
+            /> */}
+            <View style={styles.bttmLftViewTxtView}>
+              <Text
+                style={[styles.bttmLftViewTxtViewTxt, {color: stdColor.color}]}>
+                {stdColor.name} TELEPHONE
+              </Text>
+            </View>
           </View>
           <View style={styles.bttmRgtView}>
             <FlatList
