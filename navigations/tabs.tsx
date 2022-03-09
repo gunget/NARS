@@ -39,15 +39,16 @@ const Tabs: FunctionComponent<propType> = ({route}) => {
           left: 0,
           bottom: 0,
           right: 0,
-          borderTopWidth: 0,
+          borderTopWidth: 0.3,
           paddingTop: isIphoneX() ? 8 : 0,
-          backgroundColor: Colors.lightGray,
+          backgroundColor: Colors.white,
           elevation: 0, //이게 없으면 shadow잔상이 남는다.
+          borderTopColor: Colors.lightGray,
         },
         tabBarIcon: ({focused, color, size}: TabBarIconProps) => {
           const {name} = route //Tab.screens에 설정한 이름이 옴. 각 스크린마다 한번씩 오게 됨
-          const focusedSize = focused ? 5 : 0
-          const tintColor = focused ? Colors.black : Colors.white
+          const focusedSize = focused ? 3 : 0
+          const tintColor = focused ? Colors.black : Colors.lightGray
           const icon = iconsArray[name] //destructive를 사용해 해당 key로 value를 동시에 선언하기
           return (
             <Image

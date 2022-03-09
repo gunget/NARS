@@ -18,6 +18,7 @@ export type studioTelNumType = {
   telNumbers: telNumType[]
   bgColor: string
   type: string
+  studio: string
   price: string
   sizes: number[]
 }
@@ -88,9 +89,10 @@ export const studioTelNum: studioTelNumType[] = [
       },
     ],
     bgColor: Colors.NS1,
-    type: 'RUNNING',
-    price: '$186',
-    sizes: [6, 7, 8, 9, 10],
+    type: 'TELEVISION',
+    studio: 'NS - 1',
+    price: 'TEL',
+    sizes: [],
   },
   {
     id: 2,
@@ -128,9 +130,10 @@ export const studioTelNum: studioTelNumType[] = [
       },
     ],
     bgColor: Colors.NS2,
-    type: 'TRAINING',
-    price: '$135',
-    sizes: [6, 7, 8, 9, 10, 11, 12],
+    type: 'TELEVISION',
+    studio: 'NS - 2',
+    price: 'TEL',
+    sizes: [],
   },
   {
     id: 3,
@@ -168,9 +171,10 @@ export const studioTelNum: studioTelNumType[] = [
       },
     ],
     bgColor: Colors.NS4,
-    type: 'BASKETBALL',
-    price: '$199',
-    sizes: [6, 7, 8, 9],
+    type: '재난 MULTI',
+    studio: 'NS - 4',
+    price: 'TEL',
+    sizes: [],
   },
   {
     id: 4,
@@ -208,9 +212,10 @@ export const studioTelNum: studioTelNumType[] = [
       },
     ],
     bgColor: Colors.RaOn,
-    type: 'RUNNING',
-    price: '$186',
-    sizes: [6, 7, 8, 9, 10],
+    type: 'INTERNET',
+    studio: 'RAON',
+    price: 'TEL',
+    sizes: [],
   },
 ]
 
@@ -485,6 +490,7 @@ export const studioConNum: studioTelNumType[] = [
     ],
     bgColor: '#BF012C',
     type: 'RUNNING',
+    studio: 'NS-1 스튜디오',
     price: '$186',
     sizes: [6, 7, 8, 9, 10],
   },
@@ -517,7 +523,8 @@ export const studioConNum: studioTelNumType[] = [
       },
     ],
     bgColor: '#D39C67',
-    type: 'RUNNING',
+    type: 'TELEVISION',
+    studio: 'NS-1 스튜디오',
     price: '$186',
     sizes: [6, 7, 8, 9, 10],
   },
@@ -550,7 +557,8 @@ export const studioConNum: studioTelNumType[] = [
       },
     ],
     bgColor: '#7052A0',
-    type: 'RUNNING',
+    type: 'TELEVISION',
+    studio: 'NS-1 스튜디오',
     price: '$186',
     sizes: [6, 7, 8, 9, 10],
   },
@@ -583,7 +591,8 @@ export const studioConNum: studioTelNumType[] = [
       },
     ],
     bgColor: '#BF012C',
-    type: 'RUNNING',
+    type: 'TELEVISION',
+    studio: 'NS-1 스튜디오',
     price: '$186',
     sizes: [6, 7, 8, 9, 10],
   },
@@ -616,7 +625,8 @@ export const studioConNum: studioTelNumType[] = [
       },
     ],
     bgColor: 'orange',
-    type: 'RUNNING',
+    type: 'INTERNET',
+    studio: 'NS-1 스튜디오',
     price: '$186',
     sizes: [6, 7, 8, 9, 10],
   },

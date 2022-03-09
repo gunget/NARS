@@ -51,42 +51,41 @@ const styles = StyleSheet.create({
 
     elevation: 15,
   },
-  bttmRgtView: {
+  bttmLftView: {
     width: 70,
     marginLeft: Sizes.base,
   },
-  bttmRgtViewTxtView: {
+  bttmLftViewTxtView: {
     flex: 1,
     width: 300,
     flexDirection: 'column',
     justifyContent: 'center',
     backgroundColor: 'transparent',
   },
-  bttmRgtViewTxtViewTxt: {
+  bttmLftViewTxtViewTxt: {
     letterSpacing: -1,
     opacity: 0.4,
     height: 40,
     textAlign: 'center',
-    transform: [{rotate: '90deg'}, {translateY: 130}],
+    transform: [{rotate: '-90deg'}, {translateY: -105}],
     ...Fonts.studioTitleBold,
   },
-  bttmRgtImg: {
+  bttmLftImg: {
     width: '100%',
     height: '100%',
   },
-  bttmLftView: {
+  bttmRgtView: {
     flex: 1,
     paddingTop: Sizes.radius,
     paddingBottom: Sizes.radius,
-    paddingLeft: Sizes.padding,
   },
   itemSprt: {
     display: 'flex',
     width: '100%',
-    paddingHorizontal: '1%',
+    paddingHorizontal: '5%',
   },
   itemSprtView: {
-    height: 0.5,
+    height: 0.3,
     width: '100%',
     backgroundColor: Colors.lightGray,
   },
@@ -135,10 +134,10 @@ export const TelOnAir: FunctionComponent = () => {
         },
       ],
       bgColor: Colors.NS1,
-      type: 'TELEVISION',
-      studio: 'NS - 1',
-      price: 'TEL',
-      sizes: [],
+      type: 'RUNNING',
+      studio: 'NS-1 스튜디오',
+      price: '$186',
+      sizes: [6, 7, 8, 9, 10],
     },
   ])
 
@@ -238,7 +237,20 @@ export const TelOnAir: FunctionComponent = () => {
           />
         </View>
         <View style={styles.bttmFLCT}>
-          <View style={[styles.bttmLftView]}>
+          <View style={styles.bttmLftView}>
+            {/* <Image
+              source={images.recentlyViewedLabel}
+              resizeMode="contain"
+              style={styles.bttmLftImg}
+            /> */}
+            <View style={styles.bttmLftViewTxtView}>
+              <Text
+                style={[styles.bttmLftViewTxtViewTxt, {color: stdColor.color}]}>
+                {stdColor.name} TELEPHONE
+              </Text>
+            </View>
+          </View>
+          <View style={[styles.bttmRgtView]}>
             <FlatList
               ref={flatListRef}
               showsVerticalScrollIndicator={false}
@@ -253,14 +265,6 @@ export const TelOnAir: FunctionComponent = () => {
                 />
               )}
             />
-          </View>
-          <View style={styles.bttmRgtView}>
-            <View style={styles.bttmRgtViewTxtView}>
-              <Text
-                style={[styles.bttmRgtViewTxtViewTxt, {color: stdColor.color}]}>
-                {stdColor.name} TELEPHONE
-              </Text>
-            </View>
           </View>
         </View>
       </View>
