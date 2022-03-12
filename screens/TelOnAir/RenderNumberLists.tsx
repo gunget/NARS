@@ -26,11 +26,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  rgtTxtBody: {
-    color: Colors.gray,
-    ...Fonts.body3,
+  rgtTxtTitle: {
+    color: Colors.black,
+    ...Fonts.h3T2,
+    marginBottom: 5,
   },
-  rgtTxtPrice: {
+  rgtTxtDetail: {
     ...Fonts.body4,
   },
   rgtTxtView: {
@@ -57,13 +58,25 @@ const RenderNumberLists: FunctionComponent<propType> = ({
           resizeMode="contain"
           style={[
             styles.lftImg,
-            {tintColor: index == 0 ? stdColor.color : Colors.black},
+            {tintColor: index == 0 ? stdColor.color : Colors.darkBlue2},
           ]}
         />
       </View>
       <View style={styles.rgtTxtView}>
-        <Text style={styles.rgtTxtBody}>{item.name}</Text>
-        <Text style={styles.rgtTxtPrice}>{item.description}</Text>
+        <Text
+          style={[
+            styles.rgtTxtTitle,
+            {color: index == 0 ? stdColor.color : Colors.darkBlue2},
+          ]}>
+          {item.name}
+        </Text>
+        <Text
+          style={[
+            styles.rgtTxtDetail,
+            {color: index == 0 ? stdColor.color : Colors.darkBlue2},
+          ]}>
+          {item.description}
+        </Text>
       </View>
     </TouchableOpacity>
   )

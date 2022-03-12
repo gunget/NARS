@@ -6,9 +6,11 @@ export const Colors = {
   // colors
   black: '#1E1F20',
   darkBlue: '#3a5978',
+  darkBlue2: '#617387',
   white: '#FFFFFF',
   lightGray: '#ABAFB8',
   gray: '#BEC1D2',
+  darkGray: '#626c78',
 
   //studio main theme color
   NS1: '#D7384E',
@@ -30,6 +32,7 @@ export const Sizes = {
   h1: 30,
   h2: 22,
   h3: 16,
+  h3T2: 18.5,
   h4: 14,
   h5: 12,
   body1: 30,
@@ -46,8 +49,8 @@ export const Sizes = {
 const thin = 'Cafe24Sp'
 const bold = 'Cafe24DJ'
 const regular = 'Cafe24Sp'
-const title = 'SDKukdaeL'
-const sideBar = 'GodoR'
+const titleKD = 'SDKukdaeL'
+const titleGoDo = 'GodoR'
 
 export const Fonts = {
   navTitle: {fontFamily: thin, fontSize: Sizes.navTitle},
@@ -56,6 +59,7 @@ export const Fonts = {
   h1: {fontFamily: bold, fontSize: Sizes.h1, lineHeight: 36},
   h2: {fontFamily: bold, fontSize: Sizes.h2, lineHeight: 30},
   h3: {fontFamily: bold, fontSize: Sizes.h3, lineHeight: 22},
+  h3T2: {fontFamily: titleKD, fontSize: Sizes.h3T2, lineHeight: 22},
   h4: {fontFamily: bold, fontSize: Sizes.h4, lineHeight: 22},
   h5: {fontFamily: bold, fontSize: Sizes.h5, lineHeight: 22},
   body1: {

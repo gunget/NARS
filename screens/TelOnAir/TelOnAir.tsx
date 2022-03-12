@@ -86,7 +86,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: '1%',
   },
   itemSprtView: {
-    height: 0.5,
+    height: 1,
+    opacity: 0.5,
     width: '100%',
     backgroundColor: Colors.lightGray,
   },
