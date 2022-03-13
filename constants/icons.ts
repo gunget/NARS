@@ -18,15 +18,21 @@ const read_icon = require('../assets/icons/read_icon.png')
 const back_arrow_icon = require('../assets/icons/back_arrow_icon.png')
 const more_icon = require('../assets/icons/more_icon.png')
 const phone1 = require('../assets/icons/phone1.png')
-const phone2 = require('../assets/icons/phone2.png')
 const phoneAuto = require('../assets/icons/phone_auto.png')
+const phoneFill = require('../assets/icons/phone_con.png')
+const phoneNrm = require('../assets/icons/phone_normal.png')
+const mngRpt = require('../assets/icons/mng_rpt.png')
+const mngCam = require('../assets/icons/mng_cam.png')
+const arrowBack = require('../assets/icons/arrow_back.png')
 
 export default {
+  arrowBack,
   home,
   menu,
   phone1,
   phoneAuto,
-  phone2,
+  phoneFill,
+  phoneNrm,
   search,
   card_icon,
   claim_icon,
@@ -43,4 +49,6 @@ export default {
   read_icon,
   back_arrow_icon,
   more_icon,
+  mngCam,
+  mngRpt,
 }

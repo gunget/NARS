@@ -3,7 +3,7 @@ import {ImageSourcePropType, Image} from 'react-native'
 import type {RouteProp, ParamListBase} from '@react-navigation/native'
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs'
 import {Colors, icons} from '../constants'
-import {TelOnAir, MNGRpt, MNGCam} from '../screens'
+import {TelOnAir, MNGRpt, MNGCam, CopyRight} from '../screens'
 import {TabsRouteProp} from '../App'
 import {Contacts} from '../screens/Contacts/Contacts'
 import CustomTabBar from './CustomTabBar'
@@ -19,10 +19,11 @@ type TabBarIconProps = {focused: boolean; color: string; size: number}
 
 const iconsArray: Record<string, ImageSourcePropType> = {
   //Record오브젝트 type. 키와 Props의 타입을 동시에 지정
-  TelOnAir: icons.dashboard_icon,
-  MNGRpt: icons.search_icon,
-  MNGCam: icons.notification_icon,
-  Contacts: icons.page_icon,
+  TelOnAir: icons.phoneFill,
+  MNGRpt: icons.mngRpt,
+  MNGCam: icons.mngCam,
+  Contacts: icons.phoneNrm,
+  CopyRight: icons.more_icon,
 }
 
 const Tab = createBottomTabNavigator()
@@ -47,7 +48,7 @@ const Tabs: FunctionComponent<propType> = ({route}) => {
         },
         tabBarIcon: ({focused, color, size}: TabBarIconProps) => {
           const {name} = route //Tab.screens에 설정한 이름이 옴. 각 스크린마다 한번씩 오게 됨
-          const focusedSize = focused ? 3 : 0
+          const focusedSize = focused ? 1 : 0
           const tintColor = focused ? Colors.black : Colors.lightGray
           const icon = iconsArray[name] //destructive를 사용해 해당 key로 value를 동시에 선언하기
           return (
@@ -56,8 +57,8 @@ const Tabs: FunctionComponent<propType> = ({route}) => {
               resizeMode="contain"
               style={{
                 tintColor: tintColor,
-                width: 20 + focusedSize, //선택한 아이콘 커지게
-                height: 20 + focusedSize,
+                width: 28 + focusedSize, //선택한 아이콘 커지게
+                height: 28 + focusedSize,
               }}
             />
           )
@@ -70,6 +71,7 @@ const Tabs: FunctionComponent<propType> = ({route}) => {
       <Tab.Screen name="MNGRpt" component={MNGRpt} />
       <Tab.Screen name="MNGCam" component={MNGCam} />
       <Tab.Screen name="Contacts" component={Contacts} />
+      <Tab.Screen name="CopyRight" component={CopyRight} />
     </Tab.Navigator>
   )
 }
