@@ -1,5 +1,5 @@
-import {MNGCam} from './MNGCam/MNGCam'
-import {MNGRpt} from './MNGRpt/MNGRpt'
+import {MNGCam} from './MNGCam_mod/MNGCam'
+import {MNGRpt} from './MNGRpt_mod/MNGRpt'
 import {TelOnAir} from './TelOnAir/TelOnAir'
 import {Selections} from './Selections/Selections'
 import {Contacts} from './Contacts/Contacts'

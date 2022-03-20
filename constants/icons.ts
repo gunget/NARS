@@ -24,6 +24,10 @@ const phoneNrm = require('../assets/icons/phone_normal.png')
 const mngRpt = require('../assets/icons/mng_rpt.png')
 const mngCam = require('../assets/icons/mng_cam.png')
 const arrowBack = require('../assets/icons/arrow_back.png')
+const Nmns1 = require('../assets/icons/Nmns1.png')
+const Nmns1PDcall = require('../assets/icons/Nmns1PDcall.png')
+const PDcall = require('../assets/icons/PDcall2.png')
+const TV = require('../assets/icons/TV.png')
 
 export default {
   arrowBack,
@@ -51,4 +55,8 @@ export default {
   more_icon,
   mngCam,
   mngRpt,
+  Nmns1,
+  Nmns1PDcall,
+  PDcall,
+  TV,
 }

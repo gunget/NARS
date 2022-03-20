@@ -132,6 +132,7 @@ export const MNGRpt: FunctionComponent = () => {
       ],
       bgColor: '#BF012C',
       type: 'RUNNING',
+      studio: 'NS - 1',
       price: '$186',
       sizes: [6, 7, 8, 9, 10],
     },

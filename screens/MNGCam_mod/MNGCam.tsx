@@ -37,30 +37,59 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     marginTop: Sizes.padding,
-    borderTopRightRadius: 30,
-    borderTopLeftRadius: 30,
+    borderTopRightRadius: 20,
+    borderTopLeftRadius: 20,
     backgroundColor: Colors.white,
+    borderTopColor: Colors.lightGray,
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
       height: 10,
     },
-    shadowOpacity: 0.43,
-    shadowRadius: 9.51,
+    shadowOpacity: 0.5,
+    shadowRadius: 9.5,
 
     elevation: 15,
   },
-  bttmLftView: {
+  bttmRgtView: {
     width: 70,
     marginLeft: Sizes.base,
   },
-  bttmLftImg: {
+  bttmRgtViewTxtView: {
+    flex: 1,
+    width: 300,
+    flexDirection: 'column',
+    justifyContent: 'center',
+    backgroundColor: 'transparent',
+  },
+  bttmRgtViewTxtViewTxt: {
+    letterSpacing: -1,
+    opacity: 0.4,
+    height: 40,
+    textAlign: 'center',
+    transform: [{rotate: '90deg'}, {translateY: 130}],
+    ...Fonts.studioTitleBold,
+  },
+  bttmRgtImg: {
     width: '100%',
     height: '100%',
   },
-  bttmRgtView: {
+  bttmLftView: {
     flex: 1,
-    paddingBottom: Sizes.padding,
+    paddingTop: Sizes.radius,
+    paddingBottom: Sizes.radius,
+    paddingLeft: Sizes.padding,
+  },
+  itemSprt: {
+    display: 'flex',
+    width: '100%',
+    paddingHorizontal: '1%',
+  },
+  itemSprtView: {
+    height: 1,
+    opacity: 0.5,
+    width: '100%',
+    backgroundColor: Colors.lightGray,
   },
 })
 
@@ -146,41 +175,53 @@ export const MNGCam: FunctionComponent = () => {
     },
   ])
 
-  const [telNums, setTelNums] = useState<arsNumType[]>([
+  const [arsNums, setArsNums] = useState<arsNumType[]>([
     {
       id: 1,
-      name: 'PDcall',
+      name: '# 피디콜 Only #',
       number: '02-6099-7994',
-      img: images.nikeMetcon5Black,
-      description: '스튜디오 진행PD 목소리만 듣기용',
+      img: icons.PDcall,
+      description: '부조 피디의 콜만 듣고 싶을 때 사용. 일반적 참여 용도',
     },
     {
       id: 2,
-      name: 'PD + (부조N-1)',
+      name: 'PGM(N-1) & 피디콜',
       number: '02-6099-7997',
-      img: images.nikePegasus36,
+      img: icons.Nmns1PDcall,
       description:
-        'PD call과 부조진행음 함께듣기(방송참여 기자의 목소리도 함께 듣기)',
+        '방송 Audio (앵커 소리 포함, 참여 기자 목소리 제외) & 피디콜 통합 청취. 비상용',
     },
     {
       id: 3,
-      name: '1tv',
+      name: '1TV OnAir',
       number: '02-6099-7991',
-      img: images.nikeMetcon5Purple,
-      description: '1tv 생방송 모니터링(참여기자 목소리 메아리처럼 들림)',
+      img: icons.TV,
+      description: '1TV OnAir (참여 시, 기자 목소리 메아리 침). 비상용',
     },
     {
       id: 4,
-      name: '2tv',
+      name: '2TV OnAir',
       number: '02-6099-7992',
-      img: images.nikeZoomKobe1Proto,
-      description: '2tv 생방송 모니터링(참여기자 목소리 메아리처럼 들림)',
+      img: icons.TV,
+      description: '2TV OnAir (참여 시, 기자 목소리 메아리 침). 비상용',
     },
   ])
+
+  //대표전화 studio색깔로 바꿔주기
+  const [stdColor, setStdColor] = useState({color: Colors.NS1, name: 'NS-1'})
 
   //전화 flatList 바뀔때마다 제일 위로 올리기
   const setNumScrollToTop = (flatListRef: React.RefObject<FlatList<any>>) => {
     flatListRef.current?.scrollToOffset({animated: false, offset: 0})
+  }
+
+  //item 구분선
+  const itemSeperator = () => {
+    return (
+      <View style={styles.itemSprt}>
+        <View style={styles.itemSprtView}></View>
+      </View>
+    )
   }
 
   useEffect(() => {
@@ -204,9 +245,9 @@ export const MNGCam: FunctionComponent = () => {
             }}
             style={{paddingHorizontal: Sizes.radius, marginTop: Sizes.radius}}>
             <Image
-              source={icons.home}
+              source={icons.arrowBack}
               resizeMode="cover"
-              style={{width: 25, height: 25, tintColor: Colors.gray}}
+              style={{width: 25, height: 25, tintColor: Colors.black}}
             />
           </TouchableOpacity>
         </View>
@@ -221,8 +262,9 @@ export const MNGCam: FunctionComponent = () => {
               <RenderStudioLists
                 item={item}
                 index={index}
-                setList={setTelNums}
+                setList={setArsNums}
                 setListToTop={setNumScrollToTop}
+                setStdColor={setStdColor}
                 flatListRef={flatListRef}
               />
             )}
@@ -230,23 +272,29 @@ export const MNGCam: FunctionComponent = () => {
           />
         </View>
         <View style={styles.bttmFLCT}>
-          <View style={styles.bttmLftView}>
-            <Image
-              source={images.recentlyViewedLabel}
-              resizeMode="contain"
-              style={styles.bttmLftImg}
-            />
-          </View>
-          <View style={styles.bttmRgtView}>
+          <View style={[styles.bttmLftView]}>
             <FlatList
               ref={flatListRef}
               showsVerticalScrollIndicator={false}
-              data={telNums}
+              data={arsNums}
               keyExtractor={item => item.id.toString()}
+              ItemSeparatorComponent={itemSeperator}
               renderItem={({item, index}) => (
-                <RenderNumberLists item={item} index={index} />
+                <RenderNumberLists
+                  item={item}
+                  index={index}
+                  stdColor={stdColor}
+                />
               )}
             />
+          </View>
+          <View style={styles.bttmRgtView}>
+            <View style={styles.bttmRgtViewTxtView}>
+              <Text
+                style={[styles.bttmRgtViewTxtViewTxt, {color: stdColor.color}]}>
+                {stdColor.name} ARS AUDIO
+              </Text>
+            </View>
           </View>
         </View>
       </View>
