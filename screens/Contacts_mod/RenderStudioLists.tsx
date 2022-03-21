@@ -17,7 +17,7 @@ import {
 } from '../../constants/phoneNumbers'
 
 type propType = {
-  item: studioArsNumType
+  item: studioTelNumType
   index: number
   setList: React.Dispatch<React.SetStateAction<arsNumType[]>>
   setStdColor: React.Dispatch<
@@ -143,7 +143,7 @@ const RenderStudioLists: FunctionComponent<propType> = ({
     <TouchableOpacity
       style={[styles.mainCT_TO, {...firstItemStyle}]}
       onPress={() => {
-        setList(item.arsNumRpt)
+        setList(item.telNumbers)
         setListToTop(flatListRef)
         setStdColor({color: item.bgColor, name: item.name})
       }}>

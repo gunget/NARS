@@ -21,6 +21,7 @@ const phone1 = require('../assets/icons/phone1.png')
 const phoneAuto = require('../assets/icons/phone_auto.png')
 const phoneFill = require('../assets/icons/phone_con.png')
 const phoneNrm = require('../assets/icons/phone_normal.png')
+const phoneContact = require('../assets/icons/phone_contact.png')
 const mngRpt = require('../assets/icons/mng_rpt.png')
 const mngCam = require('../assets/icons/mng_cam.png')
 const arrowBack = require('../assets/icons/arrow_back.png')
@@ -37,6 +38,7 @@ export default {
   phoneAuto,
   phoneFill,
   phoneNrm,
+  phoneContact,
   search,
   card_icon,
   claim_icon,

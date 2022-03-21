@@ -15,17 +15,17 @@ const mapPin = require('../assets/images/map-pin.png')
 const notebook = require('../assets/images/notebook2.png')
 const flag = require('../assets/images/flag.png')
 const thumb = require('../assets/images/thumb-up.png')
+const link2 = require('../assets/images/link2.png')
+const radio = require('../assets/images/headphone.png')
 
 // //not used
-// const radio = require('../assets/images/headphone.png')
+// const link = require('../assets/images/link.png')
 // const file = require('../assets/images/file-text.png')
 // const pin = require('../assets/images/pin.png')
 // const calender = require('../assets/images/calender.png')
 // const copy = require('../assets/images/copy.png')
 // const favFolder = require('../assets/images/fav-folder.png')
 // const folder = require('../assets/images/folder.png')
-// const link = require('../assets/images/link.png')
-// const link2 = require('../assets/images/link2.png')
 
 export default {
   nikeMetcon3,
@@ -45,14 +45,14 @@ export default {
   bookmark,
   flag,
   notebook,
+  radio,
+  link2,
+  // link,
   // file,
   // thumb,
-  // radio,
   // calender,
   // copy,
   // favFolder,
   // folder,
-  // link,
-  // link2,
   // pin,
 }

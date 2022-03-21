@@ -16,7 +16,9 @@ export const Colors = {
   NS1: '#D7384E',
   NS2: '#965DC2',
   NS4: '#0978D9',
-  RaOn: '#008DA5',
+  RaOn: '#0087CD',
+  NDC: '#008DA5',
+  Radio: '#CB3D8E',
 }
 
 export const Sizes = {

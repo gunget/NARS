@@ -46,8 +46,8 @@ const styles = StyleSheet.create({
   },
   boxViewImage: {
     position: 'absolute',
-    top: 10,
-    left: 12,
+    top: 20,
+    left: 18,
     width: '110%',
     height: 140,
   },

@@ -16,8 +16,8 @@ import {
   studioTelNumType,
   telNumType,
 } from '../../constants/phoneNumbers'
-import {RenderNumberLists} from './RenderNumberLists'
-import {RenderStudioLists} from './RenderStudioLists'
+import RenderNumberLists from './RenderNumberLists'
+import RenderStudioLists from './RenderStudioLists'
 
 const styles = StyleSheet.create({
   mainCT: {
@@ -37,30 +37,59 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     marginTop: Sizes.padding,
-    borderTopRightRadius: 30,
-    borderTopLeftRadius: 30,
+    borderTopRightRadius: 20,
+    borderTopLeftRadius: 20,
     backgroundColor: Colors.white,
+    borderTopColor: Colors.lightGray,
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
       height: 10,
     },
-    shadowOpacity: 0.43,
-    shadowRadius: 9.51,
+    shadowOpacity: 0.5,
+    shadowRadius: 9.5,
 
     elevation: 15,
   },
-  bttmLftView: {
+  bttmRgtView: {
     width: 70,
     marginLeft: Sizes.base,
   },
-  bttmLftImg: {
+  bttmRgtViewTxtView: {
+    flex: 1,
+    width: 300,
+    flexDirection: 'column',
+    justifyContent: 'center',
+    backgroundColor: 'transparent',
+  },
+  bttmRgtViewTxtViewTxt: {
+    letterSpacing: -1,
+    opacity: 0.4,
+    height: 40,
+    textAlign: 'center',
+    transform: [{rotate: '90deg'}, {translateY: 130}],
+    ...Fonts.studioTitleBold,
+  },
+  bttmRgtImg: {
     width: '100%',
     height: '100%',
   },
-  bttmRgtView: {
+  bttmLftView: {
     flex: 1,
-    paddingBottom: Sizes.padding,
+    paddingTop: Sizes.radius,
+    paddingBottom: Sizes.radius,
+    paddingLeft: Sizes.padding,
+  },
+  itemSprt: {
+    display: 'flex',
+    width: '100%',
+    paddingHorizontal: '1%',
+  },
+  itemSprtView: {
+    height: 1,
+    opacity: 0.5,
+    width: '100%',
+    backgroundColor: Colors.lightGray,
   },
 })
 
@@ -109,23 +138,42 @@ export const Contacts: FunctionComponent = () => {
   const [telNums, setTelNums] = useState<telNumType[]>([
     {
       id: 1,
-      name: 'NDC TD1',
+      name: 'NS-1 PD',
       number: '02-780-1111',
-      img: images.nikeMetcon3,
-      description: 'NDC 기술감독',
+      img: icons.phoneContact,
+      description: 'NS-1 PD석',
     },
     {
       id: 2,
-      name: 'NDC TD2',
-      number: '02-780-1111',
-      img: images.nikeMetconFree,
-      description: 'NDC 기술감독',
+      name: 'NS-1 영상감독',
+      number: '02-780-1112',
+      img: icons.phoneContact,
+      description: 'NS-1 영상감독',
+    },
+    {
+      id: 3,
+      name: 'NS-1 음향감독',
+      number: '02-780-1113',
+      img: icons.phoneContact,
+      description: 'NS-1 영상감독',
     },
   ])
+
+  //대표전화 studio색깔로 바꿔주기
+  const [stdColor, setStdColor] = useState({color: Colors.NS1, name: 'NS-1'})
 
   //전화 flatList 바뀔때마다 제일 위로 올리기
   const setNumScrollToTop = (flatListRef: React.RefObject<FlatList<any>>) => {
     flatListRef.current?.scrollToOffset({animated: false, offset: 0})
+  }
+
+  //item 구분선
+  const itemSeperator = () => {
+    return (
+      <View style={styles.itemSprt}>
+        <View style={styles.itemSprtView}></View>
+      </View>
+    )
   }
 
   useEffect(() => {
@@ -142,16 +190,16 @@ export const Contacts: FunctionComponent = () => {
             justifyContent: 'space-between',
             // alignItems: 'center',
           }}>
-          <Text style={styles.titleTxt}>주요 연락처</Text>
+          <Text style={styles.titleTxt}>부조 연락처</Text>
           <TouchableOpacity
             onPress={() => {
               navigation.navigate('Selections')
             }}
             style={{paddingHorizontal: Sizes.radius, marginTop: Sizes.radius}}>
             <Image
-              source={icons.home}
+              source={icons.arrowBack}
               resizeMode="cover"
-              style={{width: 25, height: 25, tintColor: Colors.gray}}
+              style={{width: 25, height: 25, tintColor: Colors.black}}
             />
           </TouchableOpacity>
         </View>
@@ -168,6 +216,7 @@ export const Contacts: FunctionComponent = () => {
                 index={index}
                 setList={setTelNums}
                 setListToTop={setNumScrollToTop}
+                setStdColor={setStdColor}
                 flatListRef={flatListRef}
               />
             )}
@@ -175,23 +224,29 @@ export const Contacts: FunctionComponent = () => {
           />
         </View>
         <View style={styles.bttmFLCT}>
-          <View style={styles.bttmLftView}>
-            <Image
-              source={images.recentlyViewedLabel}
-              resizeMode="contain"
-              style={styles.bttmLftImg}
-            />
-          </View>
-          <View style={styles.bttmRgtView}>
+          <View style={[styles.bttmLftView]}>
             <FlatList
               ref={flatListRef}
               showsVerticalScrollIndicator={false}
               data={telNums}
               keyExtractor={item => item.id.toString()}
+              ItemSeparatorComponent={itemSeperator}
               renderItem={({item, index}) => (
-                <RenderNumberLists item={item} index={index} />
+                <RenderNumberLists
+                  item={item}
+                  index={index}
+                  stdColor={stdColor}
+                />
               )}
             />
+          </View>
+          <View style={styles.bttmRgtView}>
+            <View style={styles.bttmRgtViewTxtView}>
+              <Text
+                style={[styles.bttmRgtViewTxtViewTxt, {color: stdColor.color}]}>
+                {stdColor.name} CONTACTS
+              </Text>
+            </View>
           </View>
         </View>
       </View>
