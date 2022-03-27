@@ -9,6 +9,8 @@ npm install @react-navigation/native react-native-reanimated react-native-gestur
 
 // expo install expo-linking //전화걸기 앱
 
+//expo install @react-native-community/blur //blur뷰
+
 // expo install react-native-iphone-x-helper // IphoneX 이후버전에서 생기는 탭바 위 하얀 영역 없애는 용도
 
 //splash screen 띄우기

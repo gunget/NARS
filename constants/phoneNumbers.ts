@@ -53,6 +53,15 @@ export type selectionDataType = {
   // screen: keyof RootStackParamList
 }
 
+export type copyRightDataType = {
+  id: number
+  name: string
+  source: string
+  owner: string
+  color: string
+  icon: ImageSourcePropType
+}
+
 export const studioTelNum: studioTelNumType[] = [
   {
     id: 1,
@@ -712,7 +721,7 @@ export const studioConNum: studioTelNumType[] = [
 export const selectionData: selectionDataType[] = [
   {
     title: '생방 전화연결',
-    description: '전화연결로 생방송 참여 시, 취재 기자용 전화번호 ',
+    description: '전화연결로 생방송 참여 시, 취재기자용 전화번호 ',
     img: images.selectionImg1,
     screen: 'TelOnAir',
   },
@@ -731,18 +740,77 @@ export const selectionData: selectionDataType[] = [
   },
 ]
 
-export const copyRight = {
-  designConcepts: `free mobile designs by Byprogrammers at https://shop.byprogrammers.com/`,
-  fonts: {
-    cafe24: 'cafe24 단정해 무료폰트 at https://fonts.cafe24.com/',
-    SDKD: '산돌국대떡볶기 무료폰트 at http://kukde.co.kr/?page_id=627',
+export const copyRight = [
+  {
+    id: 1,
+    name: 'Free Design Concept',
+    source: `https://shop.byprogrammers.com/`,
+    owner: 'Byprogrammers',
+    color: Colors.RaOn,
+    icon: images.flag,
   },
-  iconImage: 'free 3D icon set at https://3dicons.co/',
-  icons: {
-    iconfinder:
-      'free icons by ICONFINER at https://www.iconfinder.com/search?q=telephone%20icon&price=free&license=gte__1',
-    googlefonts: 'free icons by google at https://fonts.google.com/icons',
+  {
+    id: 2,
+    name: 'Free Font type 1',
+    source: `https://fonts.cafe24.com/`,
+    owner: 'Cafe24',
+    color: Colors.NS4,
+    icon: images.radio,
   },
-  selectionImage:
-    'free illustration kit at https://sleekbundle.com/product/pulse-illustration-kit/',
-}
+  {
+    id: 3,
+    name: 'Free Font type 2',
+    source: `http://kukde.co.kr/?page_id=627'`,
+    owner: '산돌국대떡볶기',
+    color: Colors.NS4,
+    icon: images.bookmark,
+  },
+  {
+    id: 4,
+    name: 'Free 3D Icons',
+    source: `https://3dicons.co/`,
+    owner: '3dicons',
+    color: Colors.NS2,
+    icon: images.link2,
+  },
+  {
+    id: 5,
+    name: 'Free Icons type 1',
+    source: `https://www.iconfinder.com/search?q=telephone%20icon&price=free&license=gte__1`,
+    owner: 'ICONFIDER',
+    color: Colors.Radio,
+    icon: images.mapPin,
+  },
+  {
+    id: 6,
+    name: 'Free Icons type 2',
+    source: `https://fonts.google.com/icons`,
+    owner: 'google',
+    color: Colors.Radio,
+    icon: images.mapPin,
+  },
+  {
+    id: 7,
+    name: 'Free illustration',
+    source: `https://sleekbundle.com/product/pulse-illustration-kit/`,
+    owner: 'sleekbundle.com',
+    color: Colors.NS1,
+    icon: images.mapPin,
+  },
+]
+
+// export const copyRight2 = {
+//   designConcepts: `free mobile designs by Byprogrammers at https://shop.byprogrammers.com/`,
+//   fonts: {
+//     cafe24: 'cafe24 단정해 무료폰트 at https://fonts.cafe24.com/',
+//     SDKD: '산돌국대떡볶기 무료폰트 at http://kukde.co.kr/?page_id=627',
+//   },
+//   iconImage: 'free 3D icon set at https://3dicons.co/',
+//   icons: {
+//     iconfinder:
+//       'free icons by ICONFINER at https://www.iconfinder.com/search?q=telephone%20icon&price=free&license=gte__1',
+//     googlefonts: 'free icons by google at https://fonts.google.com/icons',
+//   },
+//   selectionImage:
+//     'free illustration kit at https://sleekbundle.com/product/pulse-illustration-kit/',
+// }

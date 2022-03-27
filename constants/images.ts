@@ -18,6 +18,9 @@ const thumb = require('../assets/images/thumb-up.png')
 const link2 = require('../assets/images/link2.png')
 const radio = require('../assets/images/headphone.png')
 
+//background
+const splashScreen = require('../assets/images/splash.png')
+
 // //not used
 // const link = require('../assets/images/link.png')
 // const file = require('../assets/images/file-text.png')
@@ -47,6 +50,7 @@ export default {
   notebook,
   radio,
   link2,
+  splashScreen,
   // link,
   // file,
   // thumb,
