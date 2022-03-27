@@ -190,7 +190,7 @@ export const Contacts: FunctionComponent = () => {
             justifyContent: 'space-between',
             // alignItems: 'center',
           }}>
-          <Text style={styles.titleTxt}>부조 연락처</Text>
+          <Text style={styles.titleTxt}>부조 일반연락처</Text>
           <TouchableOpacity
             onPress={() => {
               navigation.navigate('Selections')

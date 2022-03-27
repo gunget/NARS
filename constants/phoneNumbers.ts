@@ -546,7 +546,7 @@ export const studioConNum: studioTelNumType[] = [
       },
     ],
     bgColor: Colors.NS1,
-    type: '일반 연락처',
+    type: 'TV뉴스 부조',
     studio: 'NS - 1',
     price: 'TEL',
     sizes: [],
@@ -580,7 +580,7 @@ export const studioConNum: studioTelNumType[] = [
       },
     ],
     bgColor: Colors.NS2,
-    type: '일반 연락처',
+    type: 'TV뉴스 부조',
     studio: 'NS - 2',
     price: 'TEL',
     sizes: [],
@@ -614,7 +614,7 @@ export const studioConNum: studioTelNumType[] = [
       },
     ],
     bgColor: Colors.NS4,
-    type: '일반 연락처',
+    type: '재난전문 부조',
     studio: 'NS-4 재난',
     price: 'TEL',
     sizes: [],
@@ -648,7 +648,7 @@ export const studioConNum: studioTelNumType[] = [
       },
     ],
     bgColor: Colors.RaOn,
-    type: '일반 연락처',
+    type: 'Multi부조',
     studio: 'RAON',
     price: 'TEL',
     sizes: [],
@@ -675,7 +675,7 @@ export const studioConNum: studioTelNumType[] = [
       },
     ],
     bgColor: Colors.NDC,
-    type: '일반 연락처',
+    type: 'MNG회선관리',
     studio: 'NDC',
     price: 'TEL',
     sizes: [],
@@ -702,7 +702,7 @@ export const studioConNum: studioTelNumType[] = [
       },
     ],
     bgColor: Colors.Radio,
-    type: '일반 연락처',
+    type: '1R뉴스 부조',
     studio: '1R News',
     price: 'TEL',
     sizes: [],
@@ -711,24 +711,38 @@ export const studioConNum: studioTelNumType[] = [
 
 export const selectionData: selectionDataType[] = [
   {
-    title: '부조 전화연결',
-    description:
-      '전화연결로 생방송에 참여 시, 담당 기자가 사용하는 전화번호 모음 ',
+    title: '생방 전화연결',
+    description: '전화연결로 생방송 참여 시, 취재 기자용 전화번호 ',
     img: images.selectionImg1,
     screen: 'TelOnAir',
   },
   {
     title: 'MNG참여 - 기자',
     description:
-      'MNG 연결 시, ARS를 통해 기자가 앵커목소리를 듣고 싶을때 사용. (N-1)',
+      'MNG 연결 시, ARS를 통해 기자가 부조오디오(앵커목소리 포함)를 듣고 싶을 때',
     img: images.selectionImg2,
     screen: 'MNGRpt',
   },
   {
     title: 'MNG참여 - 촬영기자',
-    description:
-      'MNG 연결 시, ARS를 통해 촬영기자가 PD Call을 듣고 싶을때 사용 ',
+    description: 'MNG 연결 시, ARS를 통해 촬영기자가 PD Call등을 듣고 싶을 때 ',
     img: images.selectionImg3,
     screen: 'MNGCam',
   },
 ]
+
+export const copyRight = {
+  designConcepts: `free mobile designs by Byprogrammers at https://shop.byprogrammers.com/`,
+  fonts: {
+    cafe24: 'cafe24 단정해 무료폰트 at https://fonts.cafe24.com/',
+    SDKD: '산돌국대떡볶기 무료폰트 at http://kukde.co.kr/?page_id=627',
+  },
+  iconImage: 'free 3D icon set at https://3dicons.co/',
+  icons: {
+    iconfinder:
+      'free icons by ICONFINER at https://www.iconfinder.com/search?q=telephone%20icon&price=free&license=gte__1',
+    googlefonts: 'free icons by google at https://fonts.google.com/icons',
+  },
+  selectionImage:
+    'free illustration kit at https://sleekbundle.com/product/pulse-illustration-kit/',
+}
