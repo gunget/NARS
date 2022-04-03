@@ -728,13 +728,13 @@ export const selectionData: selectionDataType[] = [
   {
     title: 'MNG참여 - 기자',
     description:
-      'MNG 연결 시, ARS를 통해 기자가 부조오디오(앵커목소리 포함)를 듣고 싶을 때',
+      'MNG 연결 시, 기자가 부조오디오 (앵커목소리 포함)를 듣고자 할 때',
     img: images.selectionImg2,
     screen: 'MNGRpt',
   },
   {
     title: 'MNG참여 - 촬영기자',
-    description: 'MNG 연결 시, ARS를 통해 촬영기자가 PD Call등을 듣고 싶을 때 ',
+    description: 'MNG 연결 시, 촬영기자가 PD Call 등을 듣고자 할 때 ',
     img: images.selectionImg3,
     screen: 'MNGCam',
   },

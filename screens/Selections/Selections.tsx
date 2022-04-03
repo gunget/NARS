@@ -111,7 +111,7 @@ const styles = StyleSheet.create({
   btmHalfBtnCT: {
     flexDirection: 'row',
     justifyContent: 'center',
-    marginBottom: '7%',
+    marginBottom: '18%',
   },
   btmHalfBtn: {
     height: `100%`,
@@ -178,7 +178,7 @@ const styles = StyleSheet.create({
   },
   dotsRootContainer: {
     position: 'absolute',
-    bottom: Sizes.height > 700 ? '35%' : ' 35%',
+    bottom: Sizes.height > 700 ? '41%' : ' 35%',
   },
   image: {
     width: '100%',
@@ -191,10 +191,11 @@ const styles = StyleSheet.create({
   },
   pageWidthContainer: {
     width: Sizes.width,
+    marginTop: '-6%',
   },
   textContainer: {
     position: 'absolute',
-    bottom: '15%',
+    bottom: '18%',
     left: 40,
     right: 40,
   },
