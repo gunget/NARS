@@ -9,12 +9,7 @@ import {
 } from 'react-native'
 import Svg, {Polygon, Circle} from 'react-native-svg'
 import {Colors, Fonts, Sizes} from '../../constants'
-import {
-  arsNumType,
-  studioArsNumType,
-  studioTelNumType,
-  telNumType,
-} from '../../constants/phoneNumbers'
+import {arsNumType, studioTelNumType} from '../../constants/phoneNumbers'
 
 type propType = {
   item: studioTelNumType
@@ -116,8 +111,6 @@ const styles = StyleSheet.create({
     },
     shadowOpacity: 0.29,
     shadowRadius: 4.65,
-
-    // elevation: 7,
   },
   topTxt: {
     color: Colors.gray,

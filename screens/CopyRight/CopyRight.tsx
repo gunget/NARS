@@ -1,12 +1,5 @@
 import React, {FunctionComponent} from 'react'
-import {
-  Text,
-  View,
-  StyleSheet,
-  ImageBackground,
-  FlatList,
-  Image,
-} from 'react-native'
+import {Text, View, StyleSheet, ImageBackground, FlatList} from 'react-native'
 import {SafeAreaView} from 'react-native-safe-area-context'
 import {Colors, Fonts, images, Sizes} from '../../constants'
 import {copyRight, copyRightDataType} from '../../constants/phoneNumbers'
@@ -78,9 +71,7 @@ export const CopyRight: FunctionComponent = () => {
             style={[
               styles.leftImgVw,
               {backgroundColor: item.color ? item.color : Colors.white},
-            ]}>
-            {/* <Image source={item.icon} style={styles.leftImg} /> */}
-          </View>
+            ]}></View>
           <View style={styles.rightTxtVw}>
             <Text
               style={[

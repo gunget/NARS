@@ -202,7 +202,6 @@ export const TelOnAir: FunctionComponent = () => {
           style={{
             flexDirection: 'row',
             justifyContent: 'space-between',
-            // alignItems: 'center',
           }}>
           <Text style={styles.titleTxt}>전화참여</Text>
           <TouchableOpacity
@@ -267,5 +266,3 @@ export const TelOnAir: FunctionComponent = () => {
     </SafeAreaView>
   )
 }
-
-// export default TelOnAir

@@ -237,7 +237,6 @@ export const MNGRpt: FunctionComponent = () => {
           style={{
             flexDirection: 'row',
             justifyContent: 'space-between',
-            // alignItems: 'center',
           }}>
           <Text style={styles.titleTxt}>기자용 ARS</Text>
           <TouchableOpacity

@@ -1,4 +1,4 @@
-import React, {useRef, useState, useEffect, FunctionComponent} from 'react'
+import React, {useRef, FunctionComponent} from 'react'
 import {
   View,
   StyleSheet,
@@ -6,18 +6,15 @@ import {
   Animated,
   Image,
   TouchableOpacity,
-  ImageSourcePropType,
 } from 'react-native'
 import {SafeAreaView} from 'react-native-safe-area-context'
-import {Colors, Sizes, images, icons, Fonts, themes} from '../../constants'
+import {Colors, Sizes, Fonts, themes} from '../../constants'
 import {LinearGradient} from 'expo-linear-gradient'
 import {useNavigation} from '@react-navigation/native'
-import {RootStackParamList, useNavigationProp} from '../../App'
+import {useNavigationProp} from '../../App'
 import {selectionData} from '../../constants/phoneNumbers'
 
 export const Selections: FunctionComponent = () => {
-  // const [tabSelection, setTabSelection] = useState('TelOnAir')
-
   const navigation = useNavigation<useNavigationProp>()
 
   const scrollX = useRef(new Animated.Value(0)).current
@@ -58,9 +55,7 @@ export const Selections: FunctionComponent = () => {
               <TouchableOpacity
                 style={[styles.btmHalfBtnView]}
                 onPress={() => {
-                  // setTabSelection(item.screen)
                   navigation.navigate('Tabs', {selection: item.screen})
-                  // navigation.navigate(item.screen)
                 }}>
                 <LinearGradient
                   style={styles.btmHalfBtn}
@@ -76,8 +71,6 @@ export const Selections: FunctionComponent = () => {
   }
 
   const renderDots = () => {
-    // lcrn11장에 다른 형태로 더 자세하게 설명되어 있음
-
     const dotPosition = Animated.divide(scrollX, Sizes.width) // scrollX 나누기 width
     // 첫화면 0, 두번째로 스크롤시 1, 세번째로 스크롤시 2가 됨
     return (
@@ -206,9 +199,8 @@ const styles = StyleSheet.create({
     right: 40,
   },
   title: {
-    ...Fonts.h1, //폰트관련 설정을 한번에 하는 방식
+    ...Fonts.h1,
     color: Colors.darkBlue,
     textAlign: 'center',
   },
 })
-// export default Selections

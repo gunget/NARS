@@ -19,7 +19,6 @@ const styles = StyleSheet.create({
   lftImg: {
     width: 60,
     height: 85,
-    // tintColor: '#D7384E',
   },
   lftImgView: {
     flex: 1,

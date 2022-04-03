@@ -52,7 +52,6 @@ const thin = 'Cafe24Sp'
 const bold = 'Cafe24DJ'
 const regular = 'Cafe24Sp'
 const titleKD = 'SDKukdaeL'
-const titleGoDo = 'GodoR'
 
 export const Fonts = {
   navTitle: {fontFamily: thin, fontSize: Sizes.navTitle},
