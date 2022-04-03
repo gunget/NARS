@@ -14,7 +14,13 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#fff"
-      }
+      },
+      "package": "com.yourcompany.NARS",
+      "versionCode": 1
+    },
+    "ios": {
+      "bundleIdentifier": "com.yourcompany.NARS",
+      "buildNumber": "1.0.0"
     }
   },
   "name": "NARS"
