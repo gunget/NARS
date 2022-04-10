@@ -612,7 +612,7 @@ export const studioConNum: studioTelNumType[] = [
         name: 'NS-4 음향감독',
         number: '02-781-8342',
         img: icons.phoneContact,
-        description: 'NS-4 영상감독',
+        description: 'NS-4 음향감독',
       },
     ],
     bgColor: Colors.NS4,
