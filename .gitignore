@@ -56,3 +56,6 @@ dist/
 
 # PJT Source
 assets/
+
+# PJT connection data
+constants/phoneNumbers.ts
