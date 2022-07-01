@@ -18,9 +18,9 @@ type TabBarIconProps = {focused: boolean; color: string; size: number}
 
 const iconsArray: Record<string, ImageSourcePropType> = {
   //Record오브젝트 type. 키와 Props의 타입을 동시에 지정
+  TelOnAir: icons.phoneFill,
   MNGRpt: icons.mngRpt,
   MNGCam: icons.mngCam,
-  TelOnAir: icons.phoneFill,
   Contacts: icons.phoneNrm,
   CopyRight: icons.more_icon,
 }
@@ -66,9 +66,9 @@ const Tabs: FunctionComponent<propType> = ({route}) => {
       initialRouteName={`${tabSelections}`}
       tabBar={props => <CustomTabBar props={props} />}>
       {/* iphoneX 하단바 없어지며 생기는 여백문제 해결위해 커스텀 탭바 도입 */}
+      <Tab.Screen name="TelOnAir" component={TelOnAir} />
       <Tab.Screen name="MNGRpt" component={MNGRpt} />
       <Tab.Screen name="MNGCam" component={MNGCam} />
-      <Tab.Screen name="TelOnAir" component={TelOnAir} />
       <Tab.Screen name="Contacts" component={Contacts} />
       <Tab.Screen name="CopyRight" component={CopyRight} />
     </Tab.Navigator>
