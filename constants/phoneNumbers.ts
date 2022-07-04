@@ -713,12 +713,6 @@ export const studioConNum: studioTelNumType[] = [
 
 export const selectionData: selectionDataType[] = [
   {
-    title: '생방 전화연결',
-    description: '전화연결로 생방송 참여 시, 취재기자용 전화번호 ',
-    img: images.selectionImg1,
-    screen: 'TelOnAir',
-  },
-  {
     title: 'MNG참여 - 기자',
     description:
       'MNG 연결 시, 기자가 부조오디오 (앵커목소리 포함)를 듣고자 할 때',
@@ -730,6 +724,12 @@ export const selectionData: selectionDataType[] = [
     description: 'MNG 연결 시, 촬영기자가 PD Call 등을 듣고자 할 때 ',
     img: images.selectionImg3,
     screen: 'MNGCam',
+  },
+  {
+    title: '생방 전화연결',
+    description: '전화연결로 생방송 참여 시, 취재기자용 전화번호 ',
+    img: images.selectionImg1,
+    screen: 'TelOnAir',
   },
 ]
 
