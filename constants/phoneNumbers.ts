@@ -242,14 +242,14 @@ export const studioTelNum: studioTelNumType[] = [
       },
       {
         id: 4,
-        name: '단일번호 5',
+        name: '단일번호 4',
         number: '02-6298-2029',
         img: icons.phoneAuto,
         description: '단일 전화 연결용 번호 통화중일 경우 자동전환 안됨',
       },
       {
         id: 5,
-        name: '단일번호 6',
+        name: '단일번호 5',
         number: '02-6298-2011',
         img: icons.phoneAuto,
         description: '단일 전화 연결용 번호 통화중일 경우 자동전환 안됨',
